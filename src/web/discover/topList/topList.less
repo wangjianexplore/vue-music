@@ -1,0 +1,273 @@
+.topList {
+  width: 100%;
+  min-height: 500px;
+  overflow: hidden;
+  .list {
+    position: relative;
+    overflow: hidden;
+    width: 980px;
+    min-height: 700px;
+    border: 1px solid #d3d3d3;
+    margin: 0 auto;
+    .list-left {
+      position: absolute;
+      width: 240px;
+      height: 100%;
+      min-height: 700px;
+      border-right: 1px solid #d3d3d3;
+    }
+    .list-right {
+      float: right;
+      background-color: #fff;
+      margin-left: 240px;
+      width: 740px;
+      min-height: 700px;
+    }
+  }
+  .left-main {
+    margin-top: 40px;
+    .left-h2 {
+      padding: 0 10px 12px 15px;
+      font-size: 14px;
+      color: #000;
+      font-family: simsun, \5b8b\4f53;
+    }
+    li {
+      padding: 10px 0 10px 20px;
+      position: relative;
+      zoom: 1;
+      height: 62px;
+      cursor: pointer;
+      vertical-align: middle;
+      .li-left {
+        float: left;
+      }
+      .li-img {
+        width: 40px;
+        height: 40px;
+      }
+      .li-right {
+        margin-left: 50px;
+      }
+      .li-p1 {
+        white-space: nowrap;
+        cursor: pointer;
+        vertical-align: middle;
+        margin-bottom: 8px;
+        color: #000;
+      }
+      .li-p2 {
+        color: #999;
+      }
+    }
+    .li_active {
+      background-color: #e6e6e6;
+    }
+  }
+  .left-main02 {
+    margin-top: 20px;
+  }
+  .right-top {
+    padding: 40px;
+    height: 238px;
+    .top-left {
+      height: 158px;
+      float: left;
+    }
+    .top-img {
+      height: 158px;
+      width: 158px;
+      border: 1px solid #d3d3d3;
+      padding: 3px;
+    }
+    .img {
+      width: 150px;
+      height: 150px;
+    }
+    .top-right {
+      margin-left: 187px;
+      height: 158px;
+    }
+    .title {
+      line-height: 24px;
+      font-size: 20px;
+      font-weight: normal;
+      margin: 16px 0 4px;
+    }
+    .date {
+      margin: 0 0 20px;
+      line-height: 35px;
+      position: relative;
+      padding-left: 19px;
+    }
+    .date:before {
+      position: absolute;
+      left: 0;
+      top: 11px;
+      content: "";
+      display: block;
+      width: 13px;
+      height: 13px;
+      background: url(../../../../static/images/discover/icon.png) no-repeat;
+      background-position: -18px -682px;
+    }
+  }
+  .right-bottom {
+    padding-bottom: 30px;
+    padding-left: 40px;
+    padding-right: 30px;
+    .song_list {
+      // padding-left: 40px;
+      // padding-right: 30px;
+    }
+    .sl_top {
+      border-bottom: 2px solid #c20c0c;
+      height: 33px;
+    }
+    .span_song {
+      font-size: 20px;
+      line-height: 28px;
+      float: left;
+    }
+    .span_num {
+      color: #666;
+      margin: 9px 0 0 20px;
+      float: left;
+    }
+    .span_pl {
+      float: right;
+      margin-top: 5px;
+    }
+    .span_red {
+      color: #c20c0c;
+      font-weight: bold;
+    }
+  }
+  .sl_bot {
+    width: 100%;
+    min-height: 700px;
+    border: 1px solid #d3d3d3;
+    .sl_head {
+      width: 668p;
+      height: 36px;
+      line-height: 36px;
+      border-bottom: 1px solid #d3d3d3;
+      background-color: #f1f1f1;
+      .head {
+        float: left;
+        height: 100%;
+        padding-left: 7px;
+        color: #666;
+      }
+      .kong {
+        width: 77px;
+        border-right: 1px solid #d3d3d3;
+      }
+      .title {
+        width: 407px;
+        border-right: 1px solid #d3d3d3;
+      }
+      .time {
+        width: 90px;
+        border-right: 1px solid #d3d3d3;
+      }
+      .singer {
+        width: 93px;
+      }
+    }
+    .list_item {
+      width: 100%;
+    }
+    .spec_item1 {
+      height: 70px;
+      background-color: #f7f7f7;
+    }
+    .spec_item2 {
+      height: 70px;
+      // background-color: #f7f7f7;
+    }
+    .spec_item {
+      height: 30px;
+      line-height: 30px;
+    }
+    .item {
+      float: left;
+      line-height: 70px;
+      height: 100%;
+    }
+    .item01 {
+      width: 84px;
+      position: relative;
+      padding-left: 24px;
+    }
+    .item01:before {
+      content: "";
+      position: absolute;
+      right: 18px;
+      top: 26px;
+      display: block;
+      background: url(../../../../static/images/discover/icon.png) no-repeat;
+      background-position: -67px -283px;
+      width: 16px;
+      height: 17px;
+    }
+    .item02 {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      width: 400px;
+      img {
+        width: 50px;
+        height: 50px;
+        float: left;
+        margin-left: 12px;
+      }
+      .song-nane {
+        float: left;
+        line-height: 50px;
+        padding-left: 40px;
+        position: relative;
+      }
+      .song-nane::before {
+        content: "";
+        position: absolute;
+        left: 14px;
+        top: 17px;
+        display: block;
+        background: url(../../../../static/images/discover/table.png) no-repeat;
+        background-position: 0 -103px;
+        width: 17px;
+        height: 17px;
+      }
+    }
+    .item03 {
+      width: 90px;
+      display: block;
+      padding-left: 10px;
+    }
+    .item04 {
+      display: block;
+      padding-left: 10px;
+    }
+    .item07 {
+      line-height: 30px;
+    }
+    .item07::before {
+      top: 6px;
+    }
+    .item08 {
+      .song-nane::before {
+        top: -3px;
+      }
+      .song-nane {
+        line-height: 9px;
+      }
+    }
+    .item09,
+    .item10 {
+      line-height: 30px;
+    }
+    .item-li li:nth-child(2n) {
+      background-color: #f7f7f7;
+    }
+  }
+}
