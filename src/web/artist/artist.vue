@@ -232,7 +232,7 @@ export default {
     methods: {
         getSingerInfo(id) {
             let vm = this;
-            axios.get('http://musicapi.leanapp.cn/artists', {
+            axios.get('https://musicapi.leanapp.cn/artists', {
                 params: {
                     id: 10559
                 }

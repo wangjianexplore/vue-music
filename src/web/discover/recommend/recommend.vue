@@ -412,7 +412,7 @@ export default {
         // 热门推荐
         recommendList() {
             let vm = this;
-            axios.get('http://musicapi.leanapp.cn/personalized').then(function (res) {
+            axios.get('https://musicapi.leanapp.cn/personalized').then(function (res) {
                 let arr = res.data.result;
                 vm.rList = arr.slice(0, 8);
                 vm.perList = arr.slice(8, 11);
@@ -423,7 +423,7 @@ export default {
         // 新碟上架
         album() {
             let vm = this;
-            axios.get('http://musicapi.leanapp.cn/top/album', {
+            axios.get('https://musicapi.leanapp.cn/top/album', {
                 params: {
                     offset: 0,
                     limit: 10
@@ -460,7 +460,7 @@ export default {
         },
         getArtist() {
             let vm = this;
-            axios.get('http://musicapi.leanapp.cn/artist/list', {
+            axios.get('https://musicapi.leanapp.cn/artist/list', {
                 params: {
                     cat: 5001,
                     limit: 5

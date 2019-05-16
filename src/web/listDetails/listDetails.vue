@@ -66,7 +66,7 @@ export default {
         ]),
         getDetails(id) {
             let vm = this;
-            axios.get('http://musicapi.leanapp.cn/playlist/detail', {
+            axios.get('https://musicapi.leanapp.cn/playlist/detail', {
                 params: {
                     id: id
                 }
@@ -92,7 +92,7 @@ export default {
         },
         getComment(id) {
             let vm = this;
-            axios.get('http://musicapi.leanapp.cn/comment/playlist', {
+            axios.get('https://musicapi.leanapp.cn/comment/playlist', {
                 params: {
                     id: id
                 }
@@ -104,7 +104,7 @@ export default {
         },
         getHotList() {
            let vm = this;
-            axios.get('http://musicapi.leanapp.cn/top/playlist', {
+            axios.get('https://musicapi.leanapp.cn/top/playlist', {
                 params: {
                     limit: 5,
                     order: 'hot'

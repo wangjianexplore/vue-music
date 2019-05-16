@@ -107,7 +107,7 @@ export default {
         },
         getMusicUrl(id) {
             let vm = this;
-            axios.get('http://musicapi.leanapp.cn/song/url', {
+            axios.get('https://musicapi.leanapp.cn/song/url', {
                 params: {
                     id: id
                 }

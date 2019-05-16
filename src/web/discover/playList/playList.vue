@@ -115,7 +115,7 @@ export default {
         ]),
         getHotList(order, cat) {
             let vm = this;
-            axios.get('http://musicapi.leanapp.cn/top/playlist', {
+            axios.get('https://musicapi.leanapp.cn/top/playlist', {
                 params: {
                     limit: 35,
                     order: order,
@@ -130,7 +130,7 @@ export default {
         },
         getCatlist() {
             let vm = this;
-            axios.get('http://musicapi.leanapp.cn/playlist/catlist', {
+            axios.get('https://musicapi.leanapp.cn/playlist/catlist', {
                 params: {}
             }).then(function (res) {
                 vm.catlist = res.data.sub;
@@ -140,7 +140,7 @@ export default {
         },
         playMusic(id) {
             let vm = this;
-            axios.get('http://musicapi.leanapp.cn/playlist/detail', {
+            axios.get('https://musicapi.leanapp.cn/playlist/detail', {
                 params: {
                     id: id
                 }

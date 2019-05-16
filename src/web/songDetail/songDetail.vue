@@ -137,7 +137,7 @@ export default {
         },
         getDetails() {
             let vm = this;
-            axios.get('http://musicapi.leanapp.cn/song/detail', {
+            axios.get('https://musicapi.leanapp.cn/song/detail', {
                 params: {
                     ids: vm.$route.params.id
                 }
@@ -149,7 +149,7 @@ export default {
         },
         getLikeUser() {
             let vm = this;
-            axios.get('http://musicapi.leanapp.cn/simi/user', {
+            axios.get('https://musicapi.leanapp.cn/simi/user', {
                 params: {
                     id: vm.$route.params.id
                 }
@@ -161,7 +161,7 @@ export default {
         },
         getLrc() {
             let vm = this;
-            axios.get('http://musicapi.leanapp.cn/lyric', {
+            axios.get('https://musicapi.leanapp.cn/lyric', {
                 params: {
                     id: vm.$route.params.id
                 }
@@ -191,7 +191,7 @@ export default {
         },
         getComment() {
             let vm = this;
-            axios.get('http://musicapi.leanapp.cn/comment/music', {
+            axios.get('https://musicapi.leanapp.cn/comment/music', {
                 params: {
                     id: vm.getPlayInfo.id
                 }
@@ -203,7 +203,7 @@ export default {
         },
         getHotList() {
             let vm = this;
-            axios.get('http://musicapi.leanapp.cn/top/playlist', {
+            axios.get('https://musicapi.leanapp.cn/top/playlist', {
                 params: {
                     limit: 5,
                     order: 'hot'
