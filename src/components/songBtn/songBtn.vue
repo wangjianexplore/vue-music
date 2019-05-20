@@ -92,7 +92,7 @@ export default {
     li {
         float: left;
         position: relative;
-        background: url(../../../static/images/discover/button2.png) no-repeat;
+        background: url(../../assets/button2.png) no-repeat;
     }
     .li_one {
         height: 31px;
@@ -111,7 +111,7 @@ export default {
         left: 6px;
         width: 20px;
         height: 18px;
-        background: url(../../../static/images/discover/button2.png) no-repeat;
+        background: url(../../assets/button2.png) no-repeat;
         background-position: 0 -1622px;
     }
     .li_two {
@@ -140,7 +140,7 @@ export default {
         right: -4px;
         width: 23px;
         height: 31px;
-        background: url(../../../static/images/discover/button2.png) no-repeat;
+        background: url(../../assets/button2.png) no-repeat;
         background-position: right -1020px;
     }
     .li_four {

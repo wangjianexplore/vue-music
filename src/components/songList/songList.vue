@@ -285,7 +285,7 @@ export default {
             width: 17px;
             height: 17px;
             cursor: pointer;
-            background: url(../../../static/images/discover/table.png) no-repeat;
+            background: url(../../assets/table.png) no-repeat;
             background-position: 0 -103px;
         }
     }

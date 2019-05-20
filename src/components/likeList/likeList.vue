@@ -7,25 +7,25 @@
                     <img :src="item.avatarUrl" class="img" alt="">
                 </el-col>
                 <!-- <el-col :span="6" class="like_col">
-                    <img src="http://p1.music.126.net/eW4ifgFuAmVRkOKDKwnYng==/18941286811950406.jpg?param=40y40" alt="">
+                    <img src="https://p1.music.126.net/eW4ifgFuAmVRkOKDKwnYng==/18941286811950406.jpg?param=40y40" alt="">
                 </el-col>
                 <el-col :span="6" class="like_col">
-                    <img src="http://p1.music.126.net/eW4ifgFuAmVRkOKDKwnYng==/18941286811950406.jpg?param=40y40" alt="">
+                    <img src="https://p1.music.126.net/eW4ifgFuAmVRkOKDKwnYng==/18941286811950406.jpg?param=40y40" alt="">
                 </el-col>
                 <el-col :span="6" class="like_col">
-                    <img src="http://p1.music.126.net/eW4ifgFuAmVRkOKDKwnYng==/18941286811950406.jpg?param=40y40" alt="">
+                    <img src="https://p1.music.126.net/eW4ifgFuAmVRkOKDKwnYng==/18941286811950406.jpg?param=40y40" alt="">
                 </el-col>
                 <el-col :span="6" class="like_col">
-                    <img src="http://p1.music.126.net/eW4ifgFuAmVRkOKDKwnYng==/18941286811950406.jpg?param=40y40" alt="">
+                    <img src="https://p1.music.126.net/eW4ifgFuAmVRkOKDKwnYng==/18941286811950406.jpg?param=40y40" alt="">
                 </el-col>
                 <el-col :span="6" class="like_col">
-                    <img src="http://p1.music.126.net/eW4ifgFuAmVRkOKDKwnYng==/18941286811950406.jpg?param=40y40" alt="">
+                    <img src="https://p1.music.126.net/eW4ifgFuAmVRkOKDKwnYng==/18941286811950406.jpg?param=40y40" alt="">
                 </el-col>
                 <el-col :span="6" class="like_col">
-                    <img src="http://p1.music.126.net/eW4ifgFuAmVRkOKDKwnYng==/18941286811950406.jpg?param=40y40" alt="">
+                    <img src="https://p1.music.126.net/eW4ifgFuAmVRkOKDKwnYng==/18941286811950406.jpg?param=40y40" alt="">
                 </el-col>
                 <el-col :span="6" class="like_col">
-                    <img src="http://p1.music.126.net/eW4ifgFuAmVRkOKDKwnYng==/18941286811950406.jpg?param=40y40" alt="">
+                    <img src="https://p1.music.126.net/eW4ifgFuAmVRkOKDKwnYng==/18941286811950406.jpg?param=40y40" alt="">
                 </el-col> -->
             </el-row>
         </div>

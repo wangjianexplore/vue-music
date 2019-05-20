@@ -9,7 +9,7 @@
                     <ul class="bot_ul">
                         <li class="bot_li">
                             <div class="bot_head">
-                                <img class="bot_img" src="http://p1.music.126.net/p9U80ex1B1ciPFa125xV5A==/5931865232210340.jpg?param=45y45" alt="">
+                                <img class="bot_img" src="https://p1.music.126.net/p9U80ex1B1ciPFa125xV5A==/5931865232210340.jpg?param=45y45" alt="">
                             </div>
                             <div class="bot_info">
                                 <div class="name_share">
@@ -20,7 +20,7 @@
                                 <div class="date">2014年7月7日</div>
                                 <div class="text">大家好~我是a MEI，這是我No.17 作品『偏執面』，喜歡的朋友，進來聽聽吧</div>
                                 <div class="flag">
-                                    <img class="img_flag" src="http://p4.music.126.net/TTZOfZYy7mfDI-RUlkd2HQ==/5920870115914277.jpg?param=40y40&quality=100" alt="">
+                                    <img class="img_flag" src="https://p4.music.126.net/TTZOfZYy7mfDI-RUlkd2HQ==/5920870115914277.jpg?param=40y40&quality=100" alt="">
                                     <div class="scnt">
                                         <h3 class="h3"><span class="span">歌单<i class="rt"></i></span>你看不見的『偏執面』</h3>
                                         <div class="by">by 张惠妹aMEI</div>
@@ -42,15 +42,15 @@
                     <h4 class="h4">共同关注</h4>
                     <ul class="r_ul">
                         <li class="r_li">
-                            <img src="http://p1.music.126.net/QWMV-Ru_6149AKe0mCBXKg==/1420569024374784.jpg?param=64y64" alt="">
+                            <img src="https://p1.music.126.net/QWMV-Ru_6149AKe0mCBXKg==/1420569024374784.jpg?param=64y64" alt="">
                             <span class="r_span"><span class="r_span2">网易云音乐</span><i class="r_i"></i></span>
                         </li>
                         <li class="r_li">
-                            <img src="http://p1.music.126.net/QWMV-Ru_6149AKe0mCBXKg==/1420569024374784.jpg?param=64y64" alt="">
+                            <img src="https://p1.music.126.net/QWMV-Ru_6149AKe0mCBXKg==/1420569024374784.jpg?param=64y64" alt="">
                             <span class="r_span"><span class="r_span2">网易云音乐</span><i class="r_i"></i></span>
                         </li>
                         <li class="r_li">
-                            <img src="http://p1.music.126.net/QWMV-Ru_6149AKe0mCBXKg==/1420569024374784.jpg?param=64y64" alt="">
+                            <img src="https://p1.music.126.net/QWMV-Ru_6149AKe0mCBXKg==/1420569024374784.jpg?param=64y64" alt="">
                             <span class="r_span"><span class="r_span2">网易云音乐</span><i class="r_i"></i></span>
                         </li>
                     </ul>

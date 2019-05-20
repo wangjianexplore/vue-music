@@ -8,7 +8,7 @@
                         <h2 class="h2">张惠妹</h2>
                         <h3 class="h3">aMEI;阿密特</h3>
                     </div>
-                    <img width="100%" src="http://p3.music.126.net/-JxOlVRUl3OFqNkCIu9dlw==/678398674363509.jpg?param=640y300" alt="">
+                    <img width="100%" src="https://p3.music.126.net/-JxOlVRUl3OFqNkCIu9dlw==/678398674363509.jpg?param=640y300" alt="">
                     <div class="mask"></div>
                     <span class="art_btn1" @click="$router.push('/user')"></span>
                     <span class="art_btn2"></span>
@@ -36,7 +36,7 @@
                         <ul class="ul02">
                             <li class="li02">
                                 <div class="cover">
-                                    <img src="http://p4.music.126.net/NlvvmjWcrpvIKY3vs-tPYA==/109951163559485453.jpg?param=120y120" alt="">
+                                    <img src="https://p4.music.126.net/NlvvmjWcrpvIKY3vs-tPYA==/109951163559485453.jpg?param=120y120" alt="">
                                     <div class="cover_mask"></div>
                                     <div class="play02"></div>
                                 </div>
@@ -45,7 +45,7 @@
                             </li>
                             <li class="li02">
                                 <div class="cover">
-                                    <img src="http://p4.music.126.net/NlvvmjWcrpvIKY3vs-tPYA==/109951163559485453.jpg?param=120y120" alt="">
+                                    <img src="https://p4.music.126.net/NlvvmjWcrpvIKY3vs-tPYA==/109951163559485453.jpg?param=120y120" alt="">
                                     <div class="cover_mask"></div>
                                     <div class="play02"></div>
                                 </div>
@@ -54,7 +54,7 @@
                             </li>
                             <li class="li02">
                                 <div class="cover">
-                                    <img src="http://p4.music.126.net/NlvvmjWcrpvIKY3vs-tPYA==/109951163559485453.jpg?param=120y120" alt="">
+                                    <img src="https://p4.music.126.net/NlvvmjWcrpvIKY3vs-tPYA==/109951163559485453.jpg?param=120y120" alt="">
                                     <div class="cover_mask"></div>
                                     <div class="play02"></div>
                                 </div>
@@ -63,7 +63,7 @@
                             </li>
                             <li class="li02">
                                 <div class="cover">
-                                    <img src="http://p4.music.126.net/NlvvmjWcrpvIKY3vs-tPYA==/109951163559485453.jpg?param=120y120" alt="">
+                                    <img src="https://p4.music.126.net/NlvvmjWcrpvIKY3vs-tPYA==/109951163559485453.jpg?param=120y120" alt="">
                                     <div class="cover_mask"></div>
                                     <div class="play02"></div>
                                 </div>
@@ -72,7 +72,7 @@
                             </li>
                             <li class="li02">
                                 <div class="cover">
-                                    <img src="http://p4.music.126.net/NlvvmjWcrpvIKY3vs-tPYA==/109951163559485453.jpg?param=120y120" alt="">
+                                    <img src="https://p4.music.126.net/NlvvmjWcrpvIKY3vs-tPYA==/109951163559485453.jpg?param=120y120" alt="">
                                     <div class="cover_mask"></div>
                                     <div class="play02"></div>
                                 </div>
@@ -81,7 +81,7 @@
                             </li>
                             <li class="li02">
                                 <div class="cover">
-                                    <img src="http://p4.music.126.net/NlvvmjWcrpvIKY3vs-tPYA==/109951163559485453.jpg?param=120y120" alt="">
+                                    <img src="https://p4.music.126.net/NlvvmjWcrpvIKY3vs-tPYA==/109951163559485453.jpg?param=120y120" alt="">
                                     <div class="cover_mask"></div>
                                     <div class="play02"></div>
                                 </div>
@@ -90,7 +90,7 @@
                             </li>
                             <li class="li02">
                                 <div class="cover">
-                                    <img src="http://p4.music.126.net/NlvvmjWcrpvIKY3vs-tPYA==/109951163559485453.jpg?param=120y120" alt="">
+                                    <img src="https://p4.music.126.net/NlvvmjWcrpvIKY3vs-tPYA==/109951163559485453.jpg?param=120y120" alt="">
                                     <div class="cover_mask"></div>
                                     <div class="play02"></div>
                                 </div>
@@ -99,7 +99,7 @@
                             </li>
                             <li class="li02">
                                 <div class="cover">
-                                    <img src="http://p4.music.126.net/NlvvmjWcrpvIKY3vs-tPYA==/109951163559485453.jpg?param=120y120" alt="">
+                                    <img src="https://p4.music.126.net/NlvvmjWcrpvIKY3vs-tPYA==/109951163559485453.jpg?param=120y120" alt="">
                                     <div class="cover_mask"></div>
                                     <div class="play02"></div>
                                 </div>
@@ -108,7 +108,7 @@
                             </li>
                             <li class="li02">
                                 <div class="cover">
-                                    <img src="http://p4.music.126.net/NlvvmjWcrpvIKY3vs-tPYA==/109951163559485453.jpg?param=120y120" alt="">
+                                    <img src="https://p4.music.126.net/NlvvmjWcrpvIKY3vs-tPYA==/109951163559485453.jpg?param=120y120" alt="">
                                     <div class="cover_mask"></div>
                                     <div class="play02"></div>
                                 </div>
@@ -117,7 +117,7 @@
                             </li>
                             <li class="li02">
                                 <div class="cover">
-                                    <img src="http://p4.music.126.net/NlvvmjWcrpvIKY3vs-tPYA==/109951163559485453.jpg?param=120y120" alt="">
+                                    <img src="https://p4.music.126.net/NlvvmjWcrpvIKY3vs-tPYA==/109951163559485453.jpg?param=120y120" alt="">
                                     <div class="cover_mask"></div>
                                     <div class="play02"></div>
                                 </div>
@@ -126,7 +126,7 @@
                             </li>
                             <li class="li02">
                                 <div class="cover">
-                                    <img src="http://p4.music.126.net/NlvvmjWcrpvIKY3vs-tPYA==/109951163559485453.jpg?param=120y120" alt="">
+                                    <img src="https://p4.music.126.net/NlvvmjWcrpvIKY3vs-tPYA==/109951163559485453.jpg?param=120y120" alt="">
                                     <div class="cover_mask"></div>
                                     <div class="play02"></div>
                                 </div>
@@ -135,7 +135,7 @@
                             </li>
                             <li class="li02">
                                 <div class="cover">
-                                    <img src="http://p4.music.126.net/NlvvmjWcrpvIKY3vs-tPYA==/109951163559485453.jpg?param=120y120" alt="">
+                                    <img src="https://p4.music.126.net/NlvvmjWcrpvIKY3vs-tPYA==/109951163559485453.jpg?param=120y120" alt="">
                                     <div class="cover_mask"></div>
                                     <div class="play02"></div>
                                 </div>
@@ -148,7 +148,7 @@
                         <ul class="ul03">
                             <li class="li03">
                                 <div class="cover03">
-                                    <img src="http://p1.music.126.net/m_Rd7_euILOFaXa5LMesWw==/109951163573215176.jpg?param=137y103" alt="">
+                                    <img src="https://p1.music.126.net/m_Rd7_euILOFaXa5LMesWw==/109951163573215176.jpg?param=137y103" alt="">
                                     <div class="mask03"></div>
                                     <div class="play03"></div>
                                 </div>
@@ -156,7 +156,7 @@
                             </li>
                             <li class="li03">
                                 <div class="cover03">
-                                    <img src="http://p1.music.126.net/m_Rd7_euILOFaXa5LMesWw==/109951163573215176.jpg?param=137y103" alt="">
+                                    <img src="https://p1.music.126.net/m_Rd7_euILOFaXa5LMesWw==/109951163573215176.jpg?param=137y103" alt="">
                                     <div class="mask03"></div>
                                     <div class="play03"></div>
                                 </div>
@@ -164,7 +164,7 @@
                             </li>
                             <li class="li03">
                                 <div class="cover03">
-                                    <img src="http://p1.music.126.net/m_Rd7_euILOFaXa5LMesWw==/109951163573215176.jpg?param=137y103" alt="">
+                                    <img src="https://p1.music.126.net/m_Rd7_euILOFaXa5LMesWw==/109951163573215176.jpg?param=137y103" alt="">
                                     <div class="mask03"></div>
                                     <div class="play03"></div>
                                 </div>
@@ -172,7 +172,7 @@
                             </li>
                             <li class="li03">
                                 <div class="cover03">
-                                    <img src="http://p1.music.126.net/m_Rd7_euILOFaXa5LMesWw==/109951163573215176.jpg?param=137y103" alt="">
+                                    <img src="https://p1.music.126.net/m_Rd7_euILOFaXa5LMesWw==/109951163573215176.jpg?param=137y103" alt="">
                                     <div class="mask03"></div>
                                     <div class="play03"></div>
                                 </div>
@@ -180,7 +180,7 @@
                             </li>
                             <li class="li03">
                                 <div class="cover03">
-                                    <img src="http://p1.music.126.net/m_Rd7_euILOFaXa5LMesWw==/109951163573215176.jpg?param=137y103" alt="">
+                                    <img src="https://p1.music.126.net/m_Rd7_euILOFaXa5LMesWw==/109951163573215176.jpg?param=137y103" alt="">
                                     <div class="mask03"></div>
                                     <div class="play03"></div>
                                 </div>

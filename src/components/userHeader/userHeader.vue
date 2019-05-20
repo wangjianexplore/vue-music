@@ -3,7 +3,7 @@
         <div class="wrap">
             <div class="head">
                 <div class="head_left">
-                    <img src="http://p1.music.126.net/p9U80ex1B1ciPFa125xV5A==/5931865232210340.jpg?param=180y180" class="h_img" alt="">
+                    <img src="https://p1.music.126.net/p9U80ex1B1ciPFa125xV5A==/5931865232210340.jpg?param=180y180" class="h_img" alt="">
                 </div>
                 <div class="head_right">
                     <div class="hr_one">
@@ -120,14 +120,14 @@
             font-size: 14px;
             font-weight: bold;
             font-style: italic;
-            background: url(../../../static/images/discover/icon2.png) no-repeat;
+            background: url(../../assets/icon2.png) no-repeat;
             background-position: -135px -190px;
         }
         .i_level {
             float: right;
             width: 9px;
             height: 19px;
-            background: url(../../../static/images/discover/icon2.png) no-repeat;
+            background: url(../../assets/icon2.png) no-repeat;
             background-position: -191px -190px;
             overflow: hidden;
             vertical-align: middle;
@@ -137,7 +137,7 @@
             margin: 9px 0 0 8px;
             width: 20px;
             height: 20px;
-            background: url(../../../static/images/discover/icon.png) no-repeat;
+            background: url(../../assets/icon.png) no-repeat;
             background-position: -41px -27px;
         }
         .send {
@@ -145,7 +145,7 @@
             margin: 4px 0 0 15px;
             width: 75px;
             height: 31px;
-            background: url(../../../static/images/discover/button.png)
+            background: url(../../assets/button.png)
                 no-repeat;
             background-position: 0 -810px;
             line-height: 29px;
@@ -157,7 +157,7 @@
             width: 70px;
             height: 31px;
             padding-left: 30px;
-            background: url(../../../static/images/discover/button.png)
+            background: url(../../assets/button.png)
                 no-repeat;
             background-position: 0 -720px;
             color: #fff;
@@ -167,14 +167,14 @@
             float: right;
             margin-top: 4px;
             color: #333;
-            background: url(../../../static/images/discover/button2.png)
+            background: url(../../assets/button2.png)
                 no-repeat;
             background-position: right -100px;
             padding: 0 5px 0 0;
         }
         .i_look {
             color: #333;
-            background: url(../../../static/images/discover/button2.png)
+            background: url(../../assets/button2.png)
                 no-repeat;
             background-position: 0 -59px;
             padding: 0 15px 0 20px;
@@ -196,7 +196,7 @@
         .tag {
             margin-right: 6px;
             float: left;
-            background: url(../../../static/images/discover/icon2.png) no-repeat;
+            background: url(../../assets/icon2.png) no-repeat;
             background-position: 0 -480px;
             width: 68px;
             height: 20px;

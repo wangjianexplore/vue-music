@@ -8,28 +8,28 @@
                     <div class="spec-list">
                         <ul>
                             <li :class="{li_active:liNum==1}">
-                                <div class="li-left"><img class="li-img" src="../../../../static/images/discover/song19.jpg" alt=""></div>
+                                <div class="li-left"><img class="li-img" src="https://p2.music.126.net/DrRIg6CrgDfVLEph9SNh7w==/18696095720518497.jpg?param=40y40" alt=""></div>
                                 <div class="li-right">
                                     <p class="li-p1">云音乐飙升榜</p>
                                     <p class="li-p2">每天更新</p>
                                 </div>
                             </li>
                             <li>
-                                <div class="li-left"><img class="li-img" src="../../../../static/images/discover/song20.jpg" alt=""></div>
+                                <div class="li-left"><img class="li-img" src="https://p2.music.126.net/N2HO5xfYEqyQ8q6oxCw8IQ==/18713687906568048.jpg?param=40y40" alt=""></div>
                                 <div class="li-right">
                                     <p class="li-p1">云音乐新歌榜</p>
                                     <p class="li-p2">每天更新</p>
                                 </div>
                             </li>
                             <li>
-                                <div class="li-left"><img class="li-img" src="../../../../static/images/discover/song21.jpg" alt=""></div>
+                                <div class="li-left"><img class="li-img" src="https://p2.music.126.net/sBzD11nforcuh1jdLSgX7g==/18740076185638788.jpg?param=40y40" alt=""></div>
                                 <div class="li-right">
                                     <p class="li-p1">网易原创歌曲榜</p>
                                     <p class="li-p2">每周四更新</p>
                                 </div>
                             </li>
                             <li>
-                                <div class="li-left"><img class="li-img" src="../../../../static/images/discover/song22.jpg" alt=""></div>
+                                <div class="li-left"><img class="li-img" src="https://p2.music.126.net/GhhuF6Ep5Tq9IEvLsyCN7w==/18708190348409091.jpg?param=40y40" alt=""></div>
                                 <div class="li-right">
                                     <p class="li-p1">云音乐热歌榜</p>
                                     <p class="li-p2">每周四更新</p>
@@ -43,63 +43,63 @@
                     <div class="spec-list">
                         <ul>
                             <li :class="{li_active:liNum==6}">
-                                <div class="li-left"><img class="li-img" src="../../../../static/images/discover/song23.jpg" alt=""></div>
+                                <div class="li-left"><img class="li-img" src="https://p2.music.126.net/XbjRDARP1xv5a-40ZDOy6A==/109951163785427934.jpg?param=40y40" alt=""></div>
                                 <div class="li-right">
                                     <p class="li-p1">国风风云榜</p>
                                     <p class="li-p2">每周四更新</p>
                                 </div>
                             </li>
                             <li>
-                                <div class="li-left"><img class="li-img" src="../../../../static/images/discover/song24.jpg" alt=""></div>
+                                <div class="li-left"><img class="li-img" src="https://p2.music.126.net/TuGxihwbiPmoHoFGvIuu_w==/109951163781770038.jpg?param=40y40" alt=""></div>
                                 <div class="li-right">
                                     <p class="li-p1">云音乐电音榜</p>
                                     <p class="li-p2">每天更新</p>
                                 </div>
                             </li>
                             <li>
-                                <div class="li-left"><img class="li-img" src="../../../../static/images/discover/song25.jpg" alt=""></div>
+                                <div class="li-left"><img class="li-img" src="https://p2.music.126.net/BzSxoj6O1LQPlFceDn-LKw==/18681802069355169.jpg?param=40y40" alt=""></div>
                                 <div class="li-right">
                                     <p class="li-p1">斗鱼音乐榜</p>
                                     <p class="li-p2">每周四更新</p>
                                 </div>
                             </li>
                             <li>
-                                <div class="li-left"><img class="li-img" src="../../../../static/images/discover/song26.jpg" alt=""></div>
+                                <div class="li-left"><img class="li-img" src="https://p2.music.126.net/5tgOCD4jiPKBGt7znJl-2g==/18822539557941307.jpg?param=40y40" alt=""></div>
                                 <div class="li-right">
                                     <p class="li-p1">抖音排行榜</p>
                                     <p class="li-p2">每周四更新</p>
                                 </div>
                             </li>
                             <li>
-                                <div class="li-left"><img class="li-img" src="../../../../static/images/discover/song27.jpg" alt=""></div>
+                                <div class="li-left"><img class="li-img" src="https://p2.music.126.net/bZvjH5KTuvAT0YXlVa-RtQ==/109951163326845001.jpg?param=40y40" alt=""></div>
                                 <div class="li-right">
                                     <p class="li-p1">云音乐古典音乐榜</p>
                                     <p class="li-p2">每周四更新</p>
                                 </div>
                             </li>
                             <li>
-                                <div class="li-left"><img class="li-img" src="../../../../static/images/discover/song28.jpg" alt=""></div>
+                                <div class="li-left"><img class="li-img" src="https://p2.music.126.net/vttjtRjL75Q4DEnjRsO8-A==/18752170813539664.jpg?param=40y40" alt=""></div>
                                 <div class="li-right">
                                     <p class="li-p1">云音乐ACG音乐榜</p>
                                     <p class="li-p2">每周四更新</p>
                                 </div>
                             </li>
                             <li>
-                                <div class="li-left"><img class="li-img" src="../../../../static/images/discover/song29.jpg" alt=""></div>
+                                <div class="li-left"><img class="li-img" src="https://p2.music.126.net/vs-cMh49e6qPEorHuhU07A==/18737877162497499.jpg?param=40y40" alt=""></div>
                                 <div class="li-right">
                                     <p class="li-p1">云音乐韩语榜</p>
                                     <p class="li-p2">每周四更新</p>
                                 </div>
                             </li>
                             <li>
-                                <div class="li-left"><img class="li-img" src="../../../../static/images/discover/song30.jpg" alt=""></div>
+                                <div class="li-left"><img class="li-img" src="https://p2.music.126.net/8-GBrukQ3BHhs4CmK6qE4w==/109951163424197392.jpg?param=40y40" alt=""></div>
                                 <div class="li-right">
                                     <p class="li-p1">云音乐国电榜</p>
                                     <p class="li-p2">每周四更新</p>
                                 </div>
                             </li>
                             <li>
-                                <div class="li-left"><img class="li-img" src="../../../../static/images/discover/song31.jpg" alt=""></div>
+                                <div class="li-left"><img class="li-img" src="https://p2.music.126.net/0_6_Efe9m0D0NtghOxinUg==/109951163089272193.jpg?param=40y40" alt=""></div>
                                 <div class="li-right">
                                     <p class="li-p1">江小白YOLO云音乐说唱榜</p>
                                     <p class="li-p2">每周四更新</p>
@@ -112,7 +112,7 @@
             <div class="list-right">
                 <div class="right-top">
                     <div class="top-left">
-                        <div class="top-img"><img class="img" src="../../../../static/images/discover/song19.jpg" alt=""></div>
+                        <div class="top-img"><img class="img" src="https://p2.music.126.net/DrRIg6CrgDfVLEph9SNh7w==/18696095720518497.jpg?param=150y150" alt=""></div>
                     </div>
                     <div class="top-right">
                         <div class="title">云音乐飙升榜</div>
@@ -139,7 +139,7 @@
                                     <li class="spec_item1 list_item">
                                         <span class="item item01">1</span>
                                         <span class="item item02">
-                                            <img src="../../../../static/images/discover/song24.jpg" alt="">
+                                            <img src="https://p2.music.126.net/Bq6Io8lpY1l2HsQ28QKFlw==/109951164083996255.jpg?param=50y50&quality=100" alt="">
                                             <span class="song-nane">天份</span>
                                         </span>
                                         <span class="item item03">04:08</span>
@@ -148,7 +148,7 @@
                                     <li class="spec_item2 list_item">
                                         <span class="item item01">2</span>
                                         <span class="item item02">
-                                            <img src="../../../../static/images/discover/song25.jpg" alt="">
+                                            <img src="https://p2.music.126.net/Bq6Io8lpY1l2HsQ28QKFlw==/109951164083996255.jpg?param=50y50&quality=100" alt="">
                                             <span class="song-nane">天份</span>
                                         </span>
                                         <span class="item item03">04:08</span>
@@ -157,7 +157,7 @@
                                     <li class="spec_item1 list_item">
                                         <span class="item item01">3</span>
                                         <span class="item item02">
-                                            <img src="../../../../static/images/discover/song26.jpg" alt="">
+                                            <img src="https://p2.music.126.net/Bq6Io8lpY1l2HsQ28QKFlw==/109951164083996255.jpg?param=50y50&quality=100" alt="">
                                             <span class="song-nane">天份</span>
                                         </span>
                                         <span class="item item03">04:08</span>

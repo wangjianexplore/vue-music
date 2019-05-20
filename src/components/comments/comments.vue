@@ -8,7 +8,7 @@
             <div class="m-cmmt">
                 <div class="cmmt-top">
                     <div class="cmmt-img">
-                        <img src="../../../static/images/discover/head.jpg" alt="">
+                        <img src="https://p1.music.126.net/kQC7d6YwMAE23KtFoUXp_Q==/18899505369927830.jpg?param=180y180" alt="">
                     </div>
                     <div class="cmmt-input">
                         <textarea class="textarea" placeholder="评论"></textarea>
@@ -40,20 +40,6 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="cmmts_bot">
-                <div class="head">
-                    <img src="../../../static/images/discover/song23.jpg" alt="">
-                </div>
-                <div class="cmmts_txt">
-                    <div class="txt"><span class="txt_span">花色游戏</span>：一身诗意千寻瀑 万古人间四月天</div>
-                    <div>
-                        <span class="date">1月5日 16:13</span>
-                        <span class="hf">回复</span>
-                        <span class="num">(80)</span>
-                        <span class="zan"></span>
-                    </div>
-                </div>
-            </div> -->
         </div>
     </div>
 </template>
@@ -133,13 +119,13 @@ export default {
     .btn01 {
         width: 18px;
         height: 18px;
-        background: url(../../../static/images/discover/icon.png) no-repeat;
+        background: url(../../assets/icon.png) no-repeat;
         background-position: -40px -490px;
         display: inline-block;
         overflow: hidden;
     }
     .btn02 {
-        background: url(../../../static/images/discover/icon.png) no-repeat;
+        background: url(../../assets/icon.png) no-repeat;
         width: 18px;
         height: 18px;
         display: inline-block;
@@ -161,7 +147,7 @@ export default {
         color: #fff;
         text-align: center;
         line-height: 25px;
-        background: url(../../../static/images/discover/button.png) no-repeat;
+        background: url(../../assets/button.png) no-repeat;
         background-position: -84px -64px;
     }
 }
@@ -201,7 +187,7 @@ export default {
         float: right;
         margin-top: 15px;
         margin-right: 9px;
-        background: url(../../../static/images/discover/icon2.png) no-repeat;
+        background: url(../../assets/icon2.png) no-repeat;
         background-position: -150px 0;
     }
     .num {

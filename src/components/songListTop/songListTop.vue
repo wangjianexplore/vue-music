@@ -76,7 +76,7 @@ export default {
         float: left;
         width: 54px;
         height: 24px;
-        background: url(../../../static/images/discover/icon.png) no-repeat;
+        background: url(../../assets/icon.png) no-repeat;
         margin-top: 5px;
         background-position: 0 -243px;
     }
@@ -123,7 +123,7 @@ export default {
     .span {
         padding: 0 10px 0 0;
         text-shadow: 0 1px #fdfdfd;
-        background: url(../../../static/images/discover/button2.png) no-repeat;
+        background: url(../../assets/button2.png) no-repeat;
         background-position: right -27px;
         float: left;
         margin: 0px 10px 3px 0;
@@ -131,7 +131,7 @@ export default {
             position: relative;
             zoom: 1;
             padding: 0 3px 0 13px;
-            background: url(../../../static/images/discover/button2.png)
+            background: url(../../assets/button2.png)
                 no-repeat;
             background-position: 0 0;
             float: left;
@@ -165,7 +165,7 @@ export default {
     .u-icn {
         width: 11px;
         height: 8px;
-        background: url(../../../static/images/discover/icon.png) no-repeat;
+        background: url(../../assets/icon.png) no-repeat;
         background-position: -65px -520px;
         display: inline-block;
         overflow: hidden;

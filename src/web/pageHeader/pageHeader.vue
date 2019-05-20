@@ -17,7 +17,7 @@
                 创作者中心
             </div>
             <div class="info" @mouseenter="showInfo()" @mouseleave="hideInfo()">
-                <img src="../../../static/images/discover/tx.jpg" alt="" class="info_img">
+                <img width="30" height="30" src="https://p1.music.126.net/kQC7d6YwMAE23KtFoUXp_Q==/18899505369927830.jpg?param=180y180" alt="" class="info_img">
                 <div class="mainInfo" v-show="infoFlag">
                     <ul>
                         <li><i class="imgi img1"></i>我的主页</li>

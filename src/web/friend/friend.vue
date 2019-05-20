@@ -11,7 +11,7 @@
                     <div class="n_bot">
                         <ul>
                             <li class="itemLi">
-                                <div class="img"><img src="http://p1.music.126.net/LI663ME8CMYNr8p6MdeW9g==/18782957138964546.jpg?param=45y45" alt=""></div>
+                                <div class="img"><img src="https://p1.music.126.net/LI663ME8CMYNr8p6MdeW9g==/18782957138964546.jpg?param=45y45" alt=""></div>
                                 <div class="info">
                                     <div class="inf0_01">
                                         <span class="name">卖血哥</span>
@@ -33,7 +33,7 @@
                                                 <span class="l_num">5623</span>
                                                 <span class="r_time">05:08</span>
                                             </div>
-                                            <img src="http://p2.music.126.net/VnuC7gnzivX0co0BC3OzDw==/109951163778640817.jpg?param=338y189" alt="">
+                                            <img src="https://p2.music.126.net/VnuC7gnzivX0co0BC3OzDw==/109951163778640817.jpg?param=338y189" alt="">
                                         </div>
                                         <div class="video_play" v-show="videoShow">
                                             <div class="media_info">
@@ -56,7 +56,7 @@
                                 </div>
                             </li>
                             <li class="itemLi">
-                                <div class="img"><img src="http://p1.music.126.net/BEFnwAq1DKvbY68i-8v_4Q==/109951163717583641.jpg?param=45y45" alt=""></div>
+                                <div class="img"><img src="https://p1.music.126.net/BEFnwAq1DKvbY68i-8v_4Q==/109951163717583641.jpg?param=45y45" alt=""></div>
                                 <div class="info">
                                     <div class="inf0_01">
                                         <span class="name">王宇良</span>
@@ -64,10 +64,10 @@
                                     </div>
                                     <div class="time">最近</div>
                                     <div class="text">
-                                        很想跟你们唠唠嗑，但怕你们不理我<img style="vertical-align: middle;" src="http://s1.music.126.net/style/web2/emt/emoji_342.png" alt="">
+                                        很想跟你们唠唠嗑，但怕你们不理我<img style="vertical-align: middle;" src="https://s1.music.126.net/style/web2/emt/emoji_342.png" alt="">
                                     </div>
                                     <div class="music">
-                                        <img class="music_img" src="http://p1.music.126.net/XUV5-h21lVx6ncRKHjWRqw==/109951163049477992.jpg?param=40y40&quality=100" alt="">
+                                        <img class="music_img" src="https://p1.music.126.net/XUV5-h21lVx6ncRKHjWRqw==/109951163049477992.jpg?param=40y40&quality=100" alt="">
                                         <div class="music_info">
                                             <div style="font-size: 14px;">闻窗一如初见</div>
                                             <div style="color: #666;">王宇良</div>
@@ -96,7 +96,7 @@
                 <div class="r_top">
                     <div style="overflow:hidden">
                         <div class="r_info">
-                            <img src="../../../static/images/discover/head.jpg" alt="">
+                            <img src="https://p1.music.126.net/kQC7d6YwMAE23KtFoUXp_Q==/18899505369927830.jpg?param=180y180" alt="">
                         </div>
                         <h5 class="h5">那一岸边</h5>
                     </div>
@@ -123,7 +123,7 @@
                     <div class="g_bot">
                         <ul>
                             <li>
-                                <img class="img_li" src="http://p3.music.126.net/d_fIMlR6odZht4kWa9oG5w==/109951163123596131.jpg?param=45y45" alt="">
+                                <img class="img_li" src="https://p3.music.126.net/d_fIMlR6odZht4kWa9oG5w==/109951163123596131.jpg?param=45y45" alt="">
                                 <div class="img_r">
                                     <div class="name">王东</div>
                                     <div class="zc">著名主持人，电台DJ，选秀评委</div>
@@ -131,7 +131,7 @@
                                 <div class="gz">关注</div>
                             </li>
                             <li>
-                                <img class="img_li" src="http://p3.music.126.net/d_fIMlR6odZht4kWa9oG5w==/109951163123596131.jpg?param=45y45" alt="">
+                                <img class="img_li" src="https://p3.music.126.net/d_fIMlR6odZht4kWa9oG5w==/109951163123596131.jpg?param=45y45" alt="">
                                 <div class="img_r">
                                     <div class="name">王东</div>
                                     <div class="zc">著名主持人，电台DJ，选秀评委</div>
@@ -139,7 +139,7 @@
                                 <div class="gz">关注</div>
                             </li>
                             <li>
-                                <img class="img_li" src="http://p3.music.126.net/d_fIMlR6odZht4kWa9oG5w==/109951163123596131.jpg?param=45y45" alt="">
+                                <img class="img_li" src="https://p3.music.126.net/d_fIMlR6odZht4kWa9oG5w==/109951163123596131.jpg?param=45y45" alt="">
                                 <div class="img_r">
                                     <div class="name">王东</div>
                                     <div class="zc">著名主持人，电台DJ，选秀评委</div>
@@ -157,7 +157,7 @@
                     <div class="g_bot">
                         <ul>
                             <li>
-                                <img class="img_li" src="http://p4.music.126.net/KB7aK8AQBAjjyC8Ny0zCZw==/3262251007230961.jpg?param=30y30" alt="">
+                                <img class="img_li" src="https://p4.music.126.net/KB7aK8AQBAjjyC8Ny0zCZw==/3262251007230961.jpg?param=30y30" alt="">
                                 <div class="img_r">
                                     <div class="name">王东</div>
                                     <div class="zc">著名主持人，电台DJ，选秀评委</div>
@@ -165,7 +165,7 @@
                                 <div class="gz">关注</div>
                             </li>
                             <li>
-                                <img class="img_li" src="http://p4.music.126.net/KB7aK8AQBAjjyC8Ny0zCZw==/3262251007230961.jpg?param=30y30" alt="">
+                                <img class="img_li" src="https://p4.music.126.net/KB7aK8AQBAjjyC8Ny0zCZw==/3262251007230961.jpg?param=30y30" alt="">
                                 <div class="img_r">
                                     <div class="name">王东</div>
                                     <div class="zc">著名主持人，电台DJ，选秀评委</div>
@@ -173,7 +173,7 @@
                                 <div class="gz">关注</div>
                             </li>
                             <li>
-                                <img class="img_li" src="http://p4.music.126.net/KB7aK8AQBAjjyC8Ny0zCZw==/3262251007230961.jpg?param=30y30" alt="">
+                                <img class="img_li" src="https://p4.music.126.net/KB7aK8AQBAjjyC8Ny0zCZw==/3262251007230961.jpg?param=30y30" alt="">
                                 <div class="img_r">
                                     <div class="name">王东</div>
                                     <div class="zc">著名主持人，电台DJ，选秀评委</div>

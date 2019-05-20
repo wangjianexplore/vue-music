@@ -4,14 +4,14 @@
         <el-row class="row-swiper" :style="{backgroundColor:bgColor}">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="../../../../static/images/discover/main01.jpg" alt="" /></div>
-                    <div class="swiper-slide"><img src="../../../../static/images/discover/main02.jpg" alt="" /></div>
-                    <div class="swiper-slide"><img src="../../../../static/images/discover/main03.jpg" alt="" /></div>
-                    <div class="swiper-slide"><img src="../../../../static/images/discover/main04.jpg" alt="" /></div>
-                    <div class="swiper-slide"><img src="../../../../static/images/discover/main05.jpg" alt="" /></div>
-                    <div class="swiper-slide"><img src="../../../../static/images/discover/main06.jpg" alt="" /></div>
-                    <div class="swiper-slide"><img src="../../../../static/images/discover/main07.jpg" alt="" /></div>
-                    <div class="swiper-slide"><img src="../../../../static/images/discover/main08.jpg" alt="" /></div>
+                    <div class="swiper-slide"><img src="../../../assets/main01.jpg" alt="" /></div>
+                    <div class="swiper-slide"><img src="../../../assets/main02.jpg" alt="" /></div>
+                    <div class="swiper-slide"><img src="../../../assets/main03.jpg" alt="" /></div>
+                    <div class="swiper-slide"><img src="../../../assets/main04.jpg" alt="" /></div>
+                    <div class="swiper-slide"><img src="../../../assets/main05.jpg" alt="" /></div>
+                    <div class="swiper-slide"><img src="../../../assets/main06.jpg" alt="" /></div>
+                    <div class="swiper-slide"><img src="../../../assets/main07.jpg" alt="" /></div>
+                    <div class="swiper-slide"><img src="../../../assets/main08.jpg" alt="" /></div>
                 </div>
                 <!-- 如果需要分页器 -->
                 <div class="swiper-pagination"></div>
@@ -127,7 +127,7 @@
                                 <el-row>
                                     <el-col :span="8">
                                         <div class="board-top">
-                                            <img src="../../../../static/images/discover/song19.jpg" alt="">
+                                            <img src="https://p4.music.126.net/DrRIg6CrgDfVLEph9SNh7w==/18696095720518497.jpg?param=100y100" alt="">
                                             <div class="board-right">
                                                 <div>云音乐飙升榜</div>
                                             </div>
@@ -144,7 +144,7 @@
                                     </el-col>
                                     <el-col :span="8">
                                         <div class="board-top">
-                                            <img src="../../../../static/images/discover/song20.jpg" alt="">
+                                            <img src="https://p4.music.126.net/N2HO5xfYEqyQ8q6oxCw8IQ==/18713687906568048.jpg?param=100y100" alt="">
                                             <div class="board-right">
                                                 <div>云音乐新歌榜</div>
                                             </div>
@@ -161,7 +161,7 @@
                                     </el-col>
                                     <el-col :span="8">
                                         <div class="board-top">
-                                            <img src="../../../../static/images/discover/song21.jpg" alt="">
+                                            <img src="https://p3.music.126.net/sBzD11nforcuh1jdLSgX7g==/18740076185638788.jpg?param=100y100" alt="">
                                             <div class="board-right">
                                                 <div>网易原创歌曲榜</div>
                                             </div>
@@ -185,7 +185,7 @@
                     <div class="left-box">
                         <div class="lb-top">
                             <div class="left-head">
-                                <img src="../../../../static/images/discover/head.jpg" alt="">
+                                <img width="86" height="86" src="https://p1.music.126.net/kQC7d6YwMAE23KtFoUXp_Q==/18899505369927830.jpg?param=180y180" alt="">
                             </div>
                             <div class="right-name">
                                 <div class="name">那一岸边</div>
@@ -226,42 +226,6 @@
                                         <p class="singer-tl">音乐人</p>
                                     </div>
                                 </li>
-                                <!-- <li>
-                                    <div class="singer-img">
-                                        <img src="../../../../static/images/discover/singer02.jpg" alt="">
-                                    </div>
-                                    <div class="singer-info">
-                                        <p class="singer-name">Fine乐团</p>
-                                        <p class="singer-tl">独立音乐人</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="singer-img">
-                                        <img src="../../../../static/images/discover/singer03.jpg" alt="">
-                                    </div>
-                                    <div class="singer-info">
-                                        <p class="singer-name">萬曉利</p>
-                                        <p class="singer-tl">民谣歌手、中国现代民谣的代表人物之一</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="singer-img">
-                                        <img src="../../../../static/images/discover/singer04.jpg" alt="">
-                                    </div>
-                                    <div class="singer-info">
-                                        <p class="singer-name">音乐人赵雷</p>
-                                        <p class="singer-tl">民谣歌手</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="singer-img">
-                                        <img src="../../../../static/images/discover/singer05.jpg" alt="">
-                                    </div>
-                                    <div class="singer-info">
-                                        <p class="singer-name">王三溥</p>
-                                        <p class="singer-tl">音乐人</p>
-                                    </div>
-                                </li> -->
                                 <li class="for-singer">申请成为网易音乐人</li>
                             </ul>
                         </div>
@@ -272,7 +236,7 @@
                             <ul>
                                 <li>
                                     <div class="anchor-img" @click="$router.push('/user')">
-                                        <img src="../../../../static/images/discover/anchor01.jpg" alt="">
+                                        <img src="https://p2.music.126.net/H3QxWdf0eUiwmhJvA4vrMQ==/1407374893913311.jpg?param=40y40" alt="">
                                     </div>
                                     <div class="anchor-info">
                                         <p class="anchor-name" @click="$router.push('/user')">陈立</p>
@@ -281,7 +245,7 @@
                                 </li>
                                 <li>
                                     <div class="anchor-img" @click="$router.push('/user')">
-                                        <img src="../../../../static/images/discover/anchor02.jpg" alt="">
+                                        <img src="https://p2.music.126.net/y5-sM7tjnxnu_V9LWKgZlw==/7942872001461517.jpg?param=40y40" alt="">
                                     </div>
                                     <div class="anchor-info">
                                         <p class="anchor-name" @click="$router.push('/user')">DJ艳秋</p>
@@ -290,7 +254,7 @@
                                 </li>
                                 <li>
                                     <div class="anchor-img" @click="$router.push('/user')">
-                                        <img src="../../../../static/images/discover/anchor03.jpg" alt="">
+                                        <img src="https://p2.music.126.net/6cc6lgOfQTo6ovNnTHPyJg==/3427177769086282.jpg?param=40y40" alt="">
                                     </div>
                                     <div class="anchor-info">
                                         <p class="anchor-name" @click="$router.push('/user')">国家大剧院古典音乐频道</p>
@@ -299,7 +263,7 @@
                                 </li>
                                 <li>
                                     <div class="anchor-img" @click="$router.push('/user')">
-                                        <img src="../../../../static/images/discover/anchor04.jpg" alt="">
+                                        <img src="https://p2.music.126.net/xa1Uxrrn4J0pm_PJwkGYvw==/3130309604335651.jpg?param=40y40" alt="">
                                     </div>
                                     <div class="anchor-info">
                                         <p class="anchor-name" @click="$router.push('/user')">DJ晓苏</p>
@@ -308,7 +272,7 @@
                                 </li>
                                 <li>
                                     <div class="anchor-img" @click="$router.push('/user')">
-                                        <img src="../../../../static/images/discover/anchor05.jpg" alt="">
+                                        <img src="https://p2.music.126.net/slpd09Tf5Ju82Mv-h8MP4w==/3440371884651965.jpg?param=40y40" alt="">
                                     </div>
                                     <div class="anchor-info">
                                         <p class="anchor-name" @click="$router.push('/user')">陈立</p>

@@ -511,7 +511,7 @@ export default {
             height: 53px;
             zoom: 1;
             margin-right: 67px;
-            background: url(../static/images/discover/playbar.png) no-repeat;
+            background: url(./assets/playbar.png) no-repeat;
             background-position: 0 0;
             background-repeat: repeat-x;
         }
@@ -525,7 +525,7 @@ export default {
             right: 15px;
             width: 52px;
             height: 67px;
-            background: url(../static/images/discover/playbar.png) no-repeat;
+            background: url(./assets/playbar.png) no-repeat;
             background-position: 0 -380px;
         }
         .r-two {
@@ -534,7 +534,7 @@ export default {
             right: 0;
             width: 15px;
             height: 54px;
-            background: url(../static/images/discover/playbar.png) no-repeat;
+            background: url(./assets/playbar.png) no-repeat;
             background-position: -52px -393px;
             pointer-events: none;
         }
@@ -578,7 +578,7 @@ export default {
             float: left;
             margin-right: 8px;
             margin-top: 5px;
-            background: url(../static/images/discover/playbar.png) no-repeat;
+            background: url(./assets/playbar.png) no-repeat;
             background-position: 0 -130px;
             cursor: pointer;
         }
@@ -590,7 +590,7 @@ export default {
             height: 36px;
             float: left;
             margin-right: 8px;
-            background: url(../static/images/discover/playbar.png) no-repeat;
+            background: url(./assets/playbar.png) no-repeat;
             background-position: 0 -204px;
             cursor: pointer;
         }
@@ -609,7 +609,7 @@ export default {
             float: left;
             margin-right: 8px;
             margin-top: 5px;
-            background: url(../static/images/discover/playbar.png) no-repeat;
+            background: url(./assets/playbar.png) no-repeat;
             background-position: -80px -130px;
             cursor: pointer;
         }
@@ -623,7 +623,7 @@ export default {
             display: block;
             width: 34px;
             height: 35px;
-            background: url(../static/images/discover/playbar.png) no-repeat;
+            background: url(./assets/playbar.png) no-repeat;
             background-position: 0 -80px;
         }
         .play {
@@ -662,19 +662,19 @@ export default {
             width: 14px;
             height: 15px;
             margin: 7px 0 0 13px;
-            background: url(../static/images/discover/playbar.png) no-repeat;
+            background: url(./assets/playbar.png) no-repeat;
             background-position: -110px -103px;
         }
         .m-pbar {
             position: relative;
             width: 485px;
             height: 9px;
-            background: url(../static/images/discover/statbar.png) no-repeat;
+            background: url(./assets/statbar.png) no-repeat;
             background-position: right 0;
         }
         .barbg {
             height: 9px;
-            background: url(../static/images/discover/statbar.png) no-repeat;
+            background: url(./assets/statbar.png) no-repeat;
             background-position: right 0;
         }
         .cur {
@@ -683,7 +683,7 @@ export default {
             top: 0;
             left: 0;
             width: 0%;
-            background: url(../static/images/discover/statbar.png) no-repeat;
+            background: url(./assets/statbar.png) no-repeat;
             background-position: left -66px;
         }
         .btn {
@@ -693,7 +693,7 @@ export default {
             width: 22px;
             height: 24px;
             margin-left: -11px;
-            background: url(../static/images/discover/iconall.png) no-repeat;
+            background: url(./assets/iconall.png) no-repeat;
             background-position: 0 -250px;
             i {
                 visibility: hidden;
@@ -702,7 +702,7 @@ export default {
                 top: 5px;
                 width: 12px;
                 height: 12px;
-                background: url(../static/images/discover/loading.gif) no-repeat;
+                background: url(./assets/loading.gif) no-repeat;
             }
         }
         .time {
@@ -724,7 +724,7 @@ export default {
             height: 25px;
             margin: 11px 2px 0 0;
             text-indent: -9999px;
-            background: url(../static/images/discover/playbar.png) no-repeat;
+            background: url(./assets/playbar.png) no-repeat;
         }
         .icn-add {
             background-position: -88px -163px;
@@ -744,7 +744,7 @@ export default {
             z-index: 10;
             width: 126px;
             padding-left: 13px;
-            background: url(../static/images/discover/playbar.png) no-repeat;
+            background: url(./assets/playbar.png) no-repeat;
             background-position: -147px -238px;
         }
         .m_curr {
@@ -754,7 +754,7 @@ export default {
             top: auto;
             bottom: 8px;
             left: 0;
-            background: url(../static/images/discover/playbar.png) no-repeat;
+            background: url(./assets/playbar.png) no-repeat;
             background-position: -40px bottom;
             overflow: hidden;
         }
@@ -765,7 +765,7 @@ export default {
             display: block;
             width: 18px;
             height: 20px;
-            background: url(../static/images/discover/iconall.png) no-repeat;
+            background: url(./assets/iconall.png) no-repeat;
             background-position: -40px -250px;
             cursor: pointer;
         }
@@ -794,7 +794,7 @@ export default {
             left: 0;
             width: 32px;
             height: 113px;
-            background: url(../static/images/discover/playbar.png) no-repeat;
+            background: url(./assets/playbar.png) no-repeat;
             background-position: 0 -503px;
         }
         .icn-vol {
@@ -840,7 +840,7 @@ export default {
             float: none;
             width: 59px;
             padding-left: 21px;
-            background: url(../static/images/discover/playbar.png) no-repeat;
+            background: url(./assets/playbar.png) no-repeat;
             background-position: -42px -68px;
             line-height: 27px;
             text-align: center;
@@ -862,7 +862,7 @@ export default {
             width: 18px;
             height: 18px;
             margin: 6px 0 0 17px;
-            background: url(../static/images/discover/playbar.png) no-repeat;
+            background: url(./assets/playbar.png) no-repeat;
             background-position: -80px -380px;
             color: #fff;
         }
@@ -879,7 +879,7 @@ export default {
             // width: 18px;
             // height: 18px;
             // margin: 6px 0 0 17px;
-            // background: url(../static/images/discover/playbar.png) no-repeat;
+            // background: url(./assets/playbar.png) no-repeat;
             background-position: -100px -380px;
             color: #fff;
         }
@@ -897,7 +897,7 @@ export default {
         height: 301px;
         margin-left: -493px;
         .listhd {
-            background: url(../static/images/discover/playlist_bg.png) no-repeat;
+            background: url(./assets/playlist_bg.png) no-repeat;
             background-position: 0 0;
             height: 41px;
             padding: 0 5px;
@@ -925,7 +925,7 @@ export default {
             color: #ccc;
         }
         .ico {
-            background: url(../static/images/discover/playlist.png) no-repeat;
+            background: url(./assets/playlist.png) no-repeat;
         }
         .ico-add {
             float: left;
@@ -969,7 +969,7 @@ export default {
             overflow: hidden;
             text-indent: -999px;
             cursor: pointer;
-            background: url(../static/images/discover/playlist.png) no-repeat;
+            background: url(./assets/playlist.png) no-repeat;
             background-position: -195px 9px;
         }
         .icn-del {
@@ -994,7 +994,7 @@ export default {
             width: 976px;
             height: 260px;
             overflow: hidden;
-            background: url(../static/images/discover/playlist_bg.png) no-repeat;
+            background: url(./assets/playlist_bg.png) no-repeat;
             background-position: -1014px 0;
             background-repeat: repeat-y;
             padding: 0 5px;
@@ -1095,14 +1095,14 @@ export default {
             width: 14px;
             height: 16px;
             margin-left: 32px;
-            background: url(../static/images/discover/playlist.png) no-repeat;
+            background: url(./assets/playlist.png) no-repeat;
             background-position: -80px 0px;
         }
         .playicn {
             margin-top: 8px;
             width: 10px;
             height: 13px;
-            background: url(../static/images/discover/playlist.png) no-repeat;
+            background: url(./assets/playlist.png) no-repeat;
             background-position: -182px 0;
         }
         .ico2 {
@@ -1110,7 +1110,7 @@ export default {
             overflow: hidden;
             margin: 7px 0 0 10px;
             text-indent: -9999px;
-            background: url(../static/images/discover/playlist.png) no-repeat;
+            background: url(./assets/playlist.png) no-repeat;
         }
         .col_li:hover .icns {
             display: block;
