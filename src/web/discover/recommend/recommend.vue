@@ -438,7 +438,7 @@ export default {
         },
         songList(id, type) {
             let vm = this;
-            axios.get('https://api.bzqll.com/music/netease/songList', {
+            axios.get('https://api.itooi.cn/music/netease/songList', {
                 params: {
                     key: 579621905,
                     id: id,
