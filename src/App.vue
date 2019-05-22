@@ -31,14 +31,14 @@
                         </div>
                         <div class="m-pbar">
                             <div class="barbg" @click="getBarLeft($event)" ref="barbg">
-                                <div class="cur" :style="{'width':getPlayInfo.curlength+'%'}">
+                                <div class="cur" :style="{'width':curlength+'%'}">
                                     <span class="btn" ref="refbtn">
                                         <i></i>
                                     </span>
                                 </div>
                             </div>
                             <div class="time">
-                                <em>{{getTime(parseInt(musicinfo.currentTime/60))}}:{{getTime(parseInt(musicinfo.currentTime%60))}}</em> / {{getTime(parseInt(musicinfo.duration/60))}}:{{getTime(parseInt(musicinfo.duration%60))}}
+                                <em>{{getTime(parseInt(currentTime/60))}}:{{getTime(parseInt(currentTime%60))}}</em> / {{getTime(parseInt(duration/60))}}:{{getTime(parseInt(duration%60))}}
                             </div>
                         </div>
                     </div>
@@ -108,7 +108,7 @@
                 </div>
             </div>
         </div>
-        <audio :src="getPlayInfo.musicurl" @timeupdate="updateTime" @ended="musicEnd" ref="musicref" controls style="display:none"></audio>
+        <audio :src="getPlayInfo.musicurl" :autoplay="autoplay" @timeupdate="updateTime" @ended="musicEnd" ref="musicref" controls style="display:none"></audio>
     </div>
 </template>
 <script>
@@ -123,7 +123,11 @@ export default {
             xlength: 0,
             volflag: false,
             nowlistFlag: false,
-            lrcOffset: 0
+            lrcOffset: 0,
+            autoplay: false,
+            curlength: 0,
+            duration: 0,
+            currentTime: 0
         }
     },
     computed: {
@@ -145,18 +149,43 @@ export default {
         });
         vm.progressBar();
         vm.volumeBar();
+        vm.curlength = vm.getPlayInfo.curlength;
+        vm.duration = vm.getPlayInfo.duration;
+        vm.currentTime = vm.getPlayInfo.currentTime;
+        // 浏览器刷新保存正在播放音乐的信息，以至于刷新完成后接着刷新之前继续播放
+        window.addEventListener('beforeunload', function() {
+            vm.setPlayInfo({
+                duration: vm.duration,
+                currentTime: vm.currentTime,
+                curlength: vm.currentTime / vm.duration * 100
+            });
+        }, false);
     },
     watch: {
         playState: function (a, b) {
             let vm = this;
+            vm.curlength = 0;
+            vm.duration = 0;
+            vm.currentTime = 0;
             if (b) {
+                vm.autoplay = false;
                 vm.$refs.musicref.pause();
+                vm.setPlayInfo({
+                    duration: vm.duration,
+                    currentTime: vm.currentTime,
+                    curlength: vm.currentTime / vm.duration * 100
+                });
             } else {
+                vm.autoplay = true;
                 vm.$refs.musicref.play();
             }
         },
         restart: function (a, b) {
             let vm = this;
+            vm.curlength = 0;
+            vm.duration = 0;
+            vm.currentTime = 0;
+            vm.autoplay = true;
             vm.$refs.musicref.load();
         }
     },
@@ -222,17 +251,18 @@ export default {
                         lengths = 485;
                     }
                     var pren = lengths / 485;
-                    vm.$refs.musicref.currentTime = vm.getPlayInfo.duration * pren;
-                    vm.setPlayInfo({
-                        currentTime: vm.getPlayInfo.duration * pren,
-                        curlength: vm.getPlayInfo.currentTime / vm.getPlayInfo.duration * 100
-                    })
+                    vm.currentTime = vm.$refs.musicref.currentTime = vm.duration * pren;
+                    vm.curlength = vm.currentTime / vm.duration * 100;
                 } else {
                     return;
                 }
 
             }
             document.onmouseup = function () {
+                vm.setPlayInfo({
+                    currentTime: vm.currentTime,
+                    curlength: vm.curlength
+                });
                 isDrop = false; //设置为false不可移动
                 document.onmousedown = new Function("return true");
                 if (vm.getPlayInfo.onplayflag) {
@@ -275,20 +305,19 @@ export default {
             var $barbg = vm.$refs.barbg;
             var lengths = $event.pageX - $barbg.getBoundingClientRect().left;
             var pren = lengths / 485;
-            vm.$refs.musicref.currentTime = vm.getPlayInfo.duration * pren;
+            vm.currentTime = vm.$refs.musicref.currentTime = vm.duration * pren;
+            vm.curlength = pren * 100;
             vm.setPlayInfo({
-                currentTime: vm.getPlayInfo.duration * pren,
-                curlength: pren * 100
+                currentTime: vm.duration * pren,
+                curlength: vm.curlength
             })
         },
         updateTime() {
             let vm = this;
-            if (!isNaN(vm.$refs.musicref.duration)) {
-                vm.setPlayInfo({
-                    duration: vm.$refs.musicref.duration,
-                    currentTime: vm.$refs.musicref.currentTime,
-                    curlength: vm.$refs.musicref.currentTime / vm.$refs.musicref.duration * 100
-                });
+            if (vm.$refs.musicref.duration) {
+                vm.curlength = vm.$refs.musicref.currentTime / vm.$refs.musicref.duration * 100;
+                vm.duration = vm.$refs.musicref.duration;
+                vm.currentTime = vm.$refs.musicref.currentTime;
             }
             if (vm.nowlistFlag) {
                 vm.renderLrc();
@@ -296,20 +325,14 @@ export default {
         },
         renderLrc() {
             let vm = this;
-            // var scH = vm.$refs.listlyric.scrollHeight;
             var pList = vm.$refs.listlyric.childNodes;
-            // console.log(vm.$refs.p_lrc);
-            // vm.$refs.p_lrc.classList.remove('activated');
-            // console.log(pList[1].getAttribute('data-time'));
-            // console.log(pList[1].nextSibling.getAttribute('data-time'));
             pList.forEach(function (item, index) {
                 try {
-                    // console.log(item.nextSibling.getAttribute('data-time'));
                     var thisTime = item.getAttribute('data-time');
                     var prevTime = item.previousSibling.getAttribute('data-time');
                     var nextTime = item.nextSibling.getAttribute('data-time');
                     pList[index].classList.remove('activated');
-                    if (vm.getPlayInfo.currentTime >= thisTime && vm.getPlayInfo.currentTime <= nextTime) {
+                    if (vm.currentTime >= thisTime && vm.currentTime <= nextTime) {
                         item.classList.add("activated");
                         vm.lrcOffset = 32 * (index - 2);
                     }
@@ -334,6 +357,9 @@ export default {
         // 上一曲
         playPrev() {
             let vm = this;
+            vm.curlength = 0;
+            vm.duration = 0;
+            vm.currentTime = 0;
             // 随机播放时产生的随机数字
             if (vm.getPlayInfo.order === 2) {
                 let randomNum = Math.floor(Math.random() * vm.getPlayList.list.length);
@@ -351,12 +377,12 @@ export default {
             vm.setPlayInfo({
                 curlength: 0,
                 index: nextIndex,
-                musicurl: 'https://music.163.com/song/media/outer/url?id=' + nextMusic.id + '.mp3',
+                musicurl: 'http://music.163.com/song/media/outer/url?id=' + nextMusic.id + '.mp3',
                 name: nextMusic.name,
                 onplayflag: true,
                 picurl: nextMusic.al.picUrl,
                 singer: nextMusic.ar[0].name,
-                duration: nextMusic.dt/1000,
+                duration: nextMusic.dt / 1000,
                 id: nextMusic.id
             });
             vm.getLrc(nextMusic.id)
@@ -364,6 +390,9 @@ export default {
         // 下一曲
         playNext() {
             let vm = this;
+            vm.curlength = 0;
+            vm.duration = 0;
+            vm.currentTime = 0;
             // 随机播放时产生的随机数字
             if (vm.getPlayInfo.order === 2) {
                 let randomNum = Math.floor(Math.random() * vm.getPlayList.list.length);
@@ -378,30 +407,28 @@ export default {
                 nextIndex = vm.getPlayInfo.index + 1
             }
             let nextMusic = vm.getPlayList.list[nextIndex];
-            // console.log(nextMusic.al.picUrl);
             vm.setPlayInfo({
                 curlength: 0,
                 index: nextIndex,
-                musicurl: 'https://music.163.com/song/media/outer/url?id=' + nextMusic.id + '.mp3',
+                musicurl: 'http://music.163.com/song/media/outer/url?id=' + nextMusic.id + '.mp3',
                 name: nextMusic.name,
                 onplayflag: true,
                 picurl: nextMusic.al.picUrl,
                 singer: nextMusic.ar[0].name,
-                duration: nextMusic.dt/1000,
+                duration: nextMusic.dt / 1000,
                 id: nextMusic.id
             });
             vm.getLrc(nextMusic.id);
         },
         getLrc(id) {
             let vm = this;
-            axios.get('https://api.itooi.cn/music/netease/lrc', {
+            axios.get('https://v1.itooi.cn/netease/lrc', {
                 params: {
                     key: 579621905,
                     id: id
                 }
             }).then(function (res) {
                 let lrc = res.data;
-                // vm.parseLrc(lrc);
                 vm.setPlayInfo({
                     lrc: vm.parseLrc(lrc)
                 });
@@ -413,14 +440,14 @@ export default {
             let arr = lrc.split('\n');
             var lrcArray = [];
             var html = '';
-            for(let i =0; i < arr.length; i++) {
+            for (let i = 0; i < arr.length; i++) {
                 if (arr[i] != '') {
                     let temp = arr[i].split(']');
                     if (temp.length > 1) {
                         var offset = temp[0].substring(1, temp[0].length + 1);
                         var text = temp[1];
                         if (text != '') {
-                            lrcArray.push({'offset': offset, 'text': text});
+                            lrcArray.push({ 'offset': offset, 'text': text });
                         }
                     }
                 }

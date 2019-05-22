@@ -3,7 +3,7 @@
         <el-col :span="12" :offset="6" class="col-top">
             <ul class="ul-bar">
                 <li :class="{li_active:liNum==1}" @click="$router.push('/discover')">推荐</li>
-                <li :class="{li_active:liNum==2}" @click="$router.push('/discover/topList')">排行榜</li>
+                <li :class="{li_active:liNum==2}" @click="$router.push('/discover/topList/0')">排行榜</li>
                 <li :class="{li_active:liNum==3}" @click="$router.push('/discover/playList/全部')">歌单</li>
                 <li :class="{li_active:liNum==4}" @click="$router.push('/discover/djRadio')">主播电台</li>
                 <li :class="{li_active:liNum==5}" @click="$router.push('/discover/artist')">歌手</li>

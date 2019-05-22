@@ -9,28 +9,18 @@
                 <span class="title" v-text="songTop.name"></span>
             </div>
             <div class="line02">
-                <img class="img02" :src="creator.avatarUrl" alt="">
-                <span class="name" v-text="creator.nickname"></span>
+                <img class="img02" :src="avatarUrl" alt="">
+                <span class="name" v-text="nickname"></span>
                 <span class="create">{{formatDate(songTop.createTime, 'yyyy-MM-dd')}} 创建</span>
             </div>
             <songBtn></songBtn>
             <div class="label">
                 <span class="span_bq">标签：</span>
                 <span class="span" v-for="(item, index) in songTop.tags" :key="index"><i>{{item}}</i></span>
-                <!-- <span class="span"><i>流行</i></span> -->
-                <!-- <span class="span"><i>学习</i></span> -->
             </div>
-            <div class="desc" :class="{desc_auto:showFlag}" v-html="songTop.description">
-                <!-- <b>介绍：</b>
-                还记得你的梦想吗？别让你的梦只有想。<br>
-                <br>
-                努力是为了遇见更好的自己，为了以后能过更好的生活，为了不用在任何人面前感到自卑。<br>
-                <br>
-                因为很多梦未圆，因为现状的不甘，因为明天还会期待，我们都在维护我们当初那个小小的梦想，我们用人生最好的年华做抵押，去担保一个说出来都会被人嘲笑的梦想。关于梦想，我们总有说不完的话，道不尽的苦，只是，我们倔强。如果你还有梦，就该勇敢去追，冲吧，少年。<br>
-                <br>
-                2018.05.09<br> -->
+            <div class="desc" v-if="songTop.description" :class="{desc_auto:showFlag}" v-html="songTop.description">
             </div>
-            <div class="open">
+            <div class="open" v-if="songTop.description">
                 <span class="span_icon" @click="showFlag=!showFlag">{{showFlag==false?'展开':'收起'}}<i class="u-icn" :class="{u_icn2:showFlag==true}"></i></span>
             </div>
         </div>
@@ -41,18 +31,29 @@ export default {
     name: 'songListTop',
     data() {
         return {
-            showFlag: false
+            showFlag: false,
+            avatarUrl: '',
+            nickname: ''
         }
     },
     props: {
         songTop: {
             type: Object,
-            default: {}
+            default: {
+                tags: []
+            }
         },
         creator: {
             type: Object,
-            default: {}
+            default: {
+                avatarUrl: '',
+                nickname: ''
+            }
         }
+    },
+    mounted () {
+        this.avatarUrl = this.creator.avatarUrl;
+        this.nickname = this.creator.nickname;
     }
 }
 </script>

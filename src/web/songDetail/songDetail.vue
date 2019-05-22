@@ -161,12 +161,12 @@ export default {
         },
         getLrc() {
             let vm = this;
-            axios.get('https://musicapi.leanapp.cn/lyric', {
+            axios.get('https://v1.itooi.cn/netease/lrc', {
                 params: {
                     id: vm.$route.params.id
                 }
             }).then(function (res) {
-                vm.lrc = vm.parseLrc(res.data.lrc.lyric);
+                vm.lrc = vm.parseLrc(res.data);
             }).catch(function (error) {
                 console.log(error);
             });

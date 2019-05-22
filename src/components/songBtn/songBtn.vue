@@ -42,7 +42,7 @@ export default {
                 name: item.name,
                 singer: item.ar[0].name,
                 picurl: item.al.picUrl,
-                musicurl: 'https://music.163.com/song/media/outer/url?id=' + item.id + '.mp3',
+                musicurl: 'http://music.163.com/song/media/outer/url?id=' + item.id + '.mp3',
                 curlength: 0,
                 id: item.id
             });
@@ -50,9 +50,8 @@ export default {
         },
         getLrc(id) {
             let vm = this;
-            axios.get('https://api.itooi.cn/music/netease/lrc', {
+            axios.get('https://v1.itooi.cn/netease/lrc', {
                 params: {
-                    key: 579621905,
                     id: id
                 }
             }).then(function (res) {

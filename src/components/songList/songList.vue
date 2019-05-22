@@ -122,9 +122,8 @@ export default {
         },
         getLrc(id) {
             let vm = this;
-            axios.get('https://api.itooi.cn/music/netease/lrc', {
+            axios.get('https://v1.itooi.cn/netease/lrc', {
                 params: {
-                    key: 579621905,
                     id: id
                 }
             }).then(function (res) {

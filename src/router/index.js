@@ -15,7 +15,7 @@ const routes = [{
     name: 'recommend',
     component: resolve => require(['@/web/discover/recommend/recommend'], resolve)
   }, {
-    path: 'topList',
+    path: 'topList/:id',
     name: 'topList',
     component: resolve => require(['@/web/discover/topList/topList'], resolve)
   }, {

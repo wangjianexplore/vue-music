@@ -99,6 +99,7 @@
       line-height: 35px;
       position: relative;
       padding-left: 19px;
+      color: #666;
     }
     .date:before {
       position: absolute;
@@ -179,8 +180,10 @@
       width: 100%;
     }
     .spec_item1 {
-      height: 70px;
-      background-color: #f7f7f7;
+      height: 70px!important;
+      &:nth-child(2n) {
+        background-color: #f7f7f7;
+      }
     }
     .spec_item2 {
       height: 70px;
@@ -220,6 +223,7 @@
         height: 50px;
         float: left;
         margin-left: 12px;
+        cursor: pointer;
       }
       .song-nane {
         float: left;
@@ -227,8 +231,7 @@
         padding-left: 40px;
         position: relative;
       }
-      .song-nane::before {
-        content: "";
+      .play {
         position: absolute;
         left: 14px;
         top: 17px;
@@ -237,6 +240,13 @@
         background-position: 0 -103px;
         width: 17px;
         height: 17px;
+        cursor: pointer;
+      }
+      .play2 {
+        top: -3px;
+      }
+      .name {
+        cursor: pointer;
       }
     }
     .item03 {
@@ -247,6 +257,10 @@
     .item04 {
       display: block;
       padding-left: 10px;
+      width: 90px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
     .item07 {
       line-height: 30px;
@@ -262,7 +276,9 @@
         line-height: 9px;
       }
     }
-    .item09,
+    .item09 {
+      line-height: 30px;
+    }
     .item10 {
       line-height: 30px;
     }

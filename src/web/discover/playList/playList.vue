@@ -115,7 +115,7 @@ export default {
         ]),
         getHotList(order, cat) {
             let vm = this;
-            axios.get('https://musicapi.leanapp.cn/top/playlist', {
+            axios.get('http://musicapi.leanapp.cn/top/playlist', {
                 params: {
                     limit: 35,
                     order: order,
@@ -130,7 +130,7 @@ export default {
         },
         getCatlist() {
             let vm = this;
-            axios.get('https://musicapi.leanapp.cn/playlist/catlist', {
+            axios.get('http://musicapi.leanapp.cn/playlist/catlist', {
                 params: {}
             }).then(function (res) {
                 vm.catlist = res.data.sub;
@@ -140,7 +140,7 @@ export default {
         },
         playMusic(id) {
             let vm = this;
-            axios.get('https://musicapi.leanapp.cn/playlist/detail', {
+            axios.get('http://musicapi.leanapp.cn/playlist/detail', {
                 params: {
                     id: id
                 }
@@ -158,7 +158,7 @@ export default {
                     name: item.name,
                     singer: item.ar[0].name,
                     picurl: item.al.picUrl,
-                    musicurl: 'https://music.163.com/song/media/outer/url?id=' + item.id + '.mp3',
+                    musicurl: 'http://music.163.com/song/media/outer/url?id=' + item.id + '.mp3',
                     curlength: 0
                 });
                 vm.getLrc(item.id);
@@ -168,9 +168,8 @@ export default {
         },
         getLrc(id) {
             let vm = this;
-            axios.get('https://api.itooi.cn/music/netease/lrc', {
+            axios.get('https://v1.itooi.cn/netease/lrc', {
                 params: {
-                    key: 579621905,
                     id: id
                 }
             }).then(function (res) {

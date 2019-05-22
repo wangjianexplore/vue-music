@@ -1,17 +1,10 @@
 <template>
     <div class="main-music">
         <discoverTag></discoverTag>
-        <el-row class="row-swiper" :style="{backgroundColor:bgColor}">
+        <el-row class="row-swiper" :style='{background:"url("+bgColor+")"}'>
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="../../../assets/main01.jpg" alt="" /></div>
-                    <div class="swiper-slide"><img src="../../../assets/main02.jpg" alt="" /></div>
-                    <div class="swiper-slide"><img src="../../../assets/main03.jpg" alt="" /></div>
-                    <div class="swiper-slide"><img src="../../../assets/main04.jpg" alt="" /></div>
-                    <div class="swiper-slide"><img src="../../../assets/main05.jpg" alt="" /></div>
-                    <div class="swiper-slide"><img src="../../../assets/main06.jpg" alt="" /></div>
-                    <div class="swiper-slide"><img src="../../../assets/main07.jpg" alt="" /></div>
-                    <div class="swiper-slide"><img src="../../../assets/main08.jpg" alt="" /></div>
+                    <div class="swiper-slide" v-for="(item,index) in banners" :key="index+item.targetId"><img :src="item.picUrl" alt="" /></div>
                 </div>
                 <!-- 如果需要分页器 -->
                 <div class="swiper-pagination"></div>
@@ -95,9 +88,10 @@
                                         <div class="swiper-slide">
                                             <el-row class="swiper2-row">
                                                 <el-col v-for="(item,index) in newList1" :key="index">
+                                                    <div class="bg" @click="$router.push('/listDetails/' + item.id)"></div>
                                                     <img class="img_new" :src="item.picUrl" alt="" />
                                                     <div class="text01">{{item.name}}</div>
-                                                    <div class="text02">{{item.company}}</div>
+                                                    <div class="text02">{{item.artist.name}}</div>
                                                     <div class="shadow"></div>
                                                 </el-col>
                                             </el-row>
@@ -105,6 +99,7 @@
                                         <div class="swiper-slide">
                                             <el-row class="swiper2-row">
                                                 <el-col v-for="(item,index) in newList2" :key="index">
+                                                    <div class="bg" @click="$router.push('/listDetails/' + item.id)"></div>
                                                     <img class="img_new" :src="item.picUrl" alt="" />
                                                     <div class="text01">{{item.name}}</div>
                                                     <div class="text02">{{item.company}}</div>
@@ -127,52 +122,73 @@
                                 <el-row>
                                     <el-col :span="8">
                                         <div class="board-top">
-                                            <img src="https://p4.music.126.net/DrRIg6CrgDfVLEph9SNh7w==/18696095720518497.jpg?param=100y100" alt="">
+                                            <img src="http://p4.music.126.net/DrRIg6CrgDfVLEph9SNh7w==/18696095720518497.jpg?param=100y100" alt="">
                                             <div class="board-right">
+                                                <div class="playbtn" @click="playAllMusic(hotSong)"></div>
                                                 <div>云音乐飙升榜</div>
+                                                <div class="shouc"></div>
                                             </div>
                                         </div>
                                         <ol>
-                                            <li class="board-li" v-for="(item,index) in hotSong" :key="index">
+                                            <li class="board-li" v-for="(item,index) in hotSong" :key="index+item.id">
                                                 <span class="board-num" v-bind:class="{num_red:index<=2}">{{index+1}}</span>
                                                 <span class="board-title">{{item.name}}</span>
+                                                <div class="per">
+                                                    <span class="per_play" @click="playMusic(index,item.id,item.name,item.ar[0].name,item.al.picUrl,hotSong)"></span>
+                                                    <span class="per_add"></span>
+                                                    <span class="per_sc"></span>
+                                                </div>
                                             </li>
                                             <li class="board-li">
-                                                <span class="board-more">查看全部></span>
+                                                <span class="board-more" @click="$router.push('/discover/topList/3')">查看全部></span>
                                             </li>
                                         </ol>
                                     </el-col>
                                     <el-col :span="8">
                                         <div class="board-top">
-                                            <img src="https://p4.music.126.net/N2HO5xfYEqyQ8q6oxCw8IQ==/18713687906568048.jpg?param=100y100" alt="">
+                                            <img src="http://p4.music.126.net/N2HO5xfYEqyQ8q6oxCw8IQ==/18713687906568048.jpg?param=100y100" alt="">
                                             <div class="board-right">
+                                                <div class="playbtn" @click="playAllMusic(newSong)"></div>
                                                 <div>云音乐新歌榜</div>
+                                                <div class="shouc"></div>
                                             </div>
                                         </div>
                                         <ol>
-                                            <li class="board-li" v-for="(item,index) in newSong" :key="index">
+                                            <li class="board-li" v-for="(item,index) in newSong" :key="index+item.id">
                                                 <span class="board-num" v-bind:class="{num_red:index<=2}">{{index+1}}</span>
                                                 <span class="board-title">{{item.name}}</span>
+                                                <div class="per">
+                                                    <span class="per_play" @click="playMusic(index,item.id,item.name,item.ar[0].name,item.al.picUrl,newSong)"></span>
+                                                    <span class="per_add"></span>
+                                                    <span class="per_sc"></span>
+                                                </div>
                                             </li>
                                             <li class="board-li">
-                                                <span class="board-more">查看全部></span>
+                                                <span class="board-more" @click="$router.push('/discover/topList/0')">查看全部></span>
                                             </li>
                                         </ol>
                                     </el-col>
                                     <el-col :span="8">
                                         <div class="board-top">
-                                            <img src="https://p3.music.126.net/sBzD11nforcuh1jdLSgX7g==/18740076185638788.jpg?param=100y100" alt="">
+                                            <img src="http://p3.music.126.net/sBzD11nforcuh1jdLSgX7g==/18740076185638788.jpg?param=100y100" alt="">
                                             <div class="board-right">
+                                                <div class="playbtn" @click="playAllMusic(nativeSong)"></div>
                                                 <div>网易原创歌曲榜</div>
+                                                <div class="shouc"></div>
                                             </div>
                                         </div>
                                         <ol>
-                                            <li class="board-li" v-for="(item,index) in nativeSong" :key="index">
+                                            <li class="board-li" v-for="(item,index) in nativeSong" :key="index+item.id">
                                                 <span class="board-num" v-bind:class="{num_red:index<=2}">{{index+1}}</span>
                                                 <span class="board-title">{{item.name}}</span>
+                                                <div class="per">
+                                                    <span class="per_play" @click="playMusic(index,item.id,item.name,item.ar[0].name,item.al.picUrl,nativeSong)"></span>
+                                                    <span class="per_add"></span>
+                                                    <span class="per_sc"></span>
+                                                </div>
                                             </li>
                                             <li class="board-li">
-                                                <span class="board-more">查看全部></span>
+                                                <span class="board-more" @click="$router.push('/discover/topList/2')">查看全部></span>
                                             </li>
                                         </ol>
                                     </el-col>
@@ -185,7 +201,7 @@
                     <div class="left-box">
                         <div class="lb-top">
                             <div class="left-head">
-                                <img width="86" height="86" src="https://p1.music.126.net/kQC7d6YwMAE23KtFoUXp_Q==/18899505369927830.jpg?param=180y180" alt="">
+                                <img width="86" height="86" src="http://p1.music.126.net/kQC7d6YwMAE23KtFoUXp_Q==/18899505369927830.jpg?param=180y180" alt="">
                             </div>
                             <div class="right-name">
                                 <div class="name">那一岸边</div>
@@ -236,7 +252,7 @@
                             <ul>
                                 <li>
                                     <div class="anchor-img" @click="$router.push('/user')">
-                                        <img src="https://p2.music.126.net/H3QxWdf0eUiwmhJvA4vrMQ==/1407374893913311.jpg?param=40y40" alt="">
+                                        <img src="http://p2.music.126.net/H3QxWdf0eUiwmhJvA4vrMQ==/1407374893913311.jpg?param=40y40" alt="">
                                     </div>
                                     <div class="anchor-info">
                                         <p class="anchor-name" @click="$router.push('/user')">陈立</p>
@@ -245,7 +261,7 @@
                                 </li>
                                 <li>
                                     <div class="anchor-img" @click="$router.push('/user')">
-                                        <img src="https://p2.music.126.net/y5-sM7tjnxnu_V9LWKgZlw==/7942872001461517.jpg?param=40y40" alt="">
+                                        <img src="http://p2.music.126.net/y5-sM7tjnxnu_V9LWKgZlw==/7942872001461517.jpg?param=40y40" alt="">
                                     </div>
                                     <div class="anchor-info">
                                         <p class="anchor-name" @click="$router.push('/user')">DJ艳秋</p>
@@ -254,7 +270,7 @@
                                 </li>
                                 <li>
                                     <div class="anchor-img" @click="$router.push('/user')">
-                                        <img src="https://p2.music.126.net/6cc6lgOfQTo6ovNnTHPyJg==/3427177769086282.jpg?param=40y40" alt="">
+                                        <img src="http://p2.music.126.net/6cc6lgOfQTo6ovNnTHPyJg==/3427177769086282.jpg?param=40y40" alt="">
                                     </div>
                                     <div class="anchor-info">
                                         <p class="anchor-name" @click="$router.push('/user')">国家大剧院古典音乐频道</p>
@@ -263,7 +279,7 @@
                                 </li>
                                 <li>
                                     <div class="anchor-img" @click="$router.push('/user')">
-                                        <img src="https://p2.music.126.net/xa1Uxrrn4J0pm_PJwkGYvw==/3130309604335651.jpg?param=40y40" alt="">
+                                        <img src="http://p2.music.126.net/xa1Uxrrn4J0pm_PJwkGYvw==/3130309604335651.jpg?param=40y40" alt="">
                                     </div>
                                     <div class="anchor-info">
                                         <p class="anchor-name" @click="$router.push('/user')">DJ晓苏</p>
@@ -272,7 +288,7 @@
                                 </li>
                                 <li>
                                     <div class="anchor-img" @click="$router.push('/user')">
-                                        <img src="https://p2.music.126.net/slpd09Tf5Ju82Mv-h8MP4w==/3440371884651965.jpg?param=40y40" alt="">
+                                        <img src="http://p2.music.126.net/slpd09Tf5Ju82Mv-h8MP4w==/3440371884651965.jpg?param=40y40" alt="">
                                     </div>
                                     <div class="anchor-info">
                                         <p class="anchor-name" @click="$router.push('/user')">陈立</p>
@@ -289,6 +305,7 @@
     </div>
 </template>
 <script>
+import { mapGetters, mapMutations } from 'vuex';
 import Swiper from 'swiper';
 import axios from 'axios';
 export default {
@@ -296,7 +313,7 @@ export default {
     data() {
         return {
             liNum: 1,
-            bgColor: '#8F9F9E',
+            bgColor: '',
             rList: [],
             perList: [],
             newList1: [],
@@ -304,61 +321,53 @@ export default {
             hotSong: [],
             newSong: [],
             nativeSong: [],
-            rzSinger: []
+            rzSinger: [],
+            banners: []
         }
     },
     mounted() {
-        this.swiperF();
+        this.getBanner();
         this.swiperS();
         this.recommendList();
         this.album();
         this.getArtist();
-        this.songList(19723756, 1);
-        this.songList(3779629, 2);
-        this.songList(2884035, 3);
+        this.songList(3);
+        this.songList(0);
+        this.songList(2);
+    },
+    computed: {
+        ...mapGetters(['getPlayInfo'])
     },
     methods: {
+        ...mapMutations([
+            'setPlayInfo', 'setPlayList'
+        ]),
         swiperF() {
             let vm = this;
-            var swiper = new Swiper('.swiper-container', {
-                effect: 'fade',
-                loop: true,
-                simulateTouch: false,//禁止鼠标模拟
-                speed: 1000,
-                autoplay: {
-                    delay: 5000//1秒切换一次
-                },
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                on: {
-                    transitionStart: function () {
-                        if (this.activeIndex === 1) {
-                            vm.bgColor = '#8F9F9E';
-                        } else if (this.activeIndex === 2) {
-                            vm.bgColor = '#b3ecff';
-                        } else if (this.activeIndex === 3) {
-                            vm.bgColor = '#0F1012';
-                        } else if (this.activeIndex === 4) {
-                            vm.bgColor = '#0F1012';
-                        } else if (this.activeIndex === 5) {
-                            vm.bgColor = '#E4E9D3';
-                        } else if (this.activeIndex === 6) {
-                            vm.bgColor = '#0F190E';
-                        } else if (this.activeIndex === 7) {
-                            vm.bgColor = '#D80E00';
-                        } else if (this.activeIndex === 8) {
-                            vm.bgColor = '#000';
-                        } else if (this.activeIndex === 9) {
-                            vm.bgColor = '#8F9F9E';
-                        }
+            vm.$nextTick(() => {
+                var swiper = new Swiper('.swiper-container', {
+                    effect: 'fade',
+                    loop: true,
+                    simulateTouch: false,//禁止鼠标模拟
+                    speed: 1000,
+                    autoplay: {
+                        delay: 5000//1秒切换一次
                     },
-                }
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    on: {
+                        transitionStart: function () {
+                            let index = (this.activeIndex - 1) % 9;
+                            vm.bgColor = vm.banners[index].backgroundUrl;
+                        },
+                    }
+                });
             });
         },
         swiperS() {
@@ -376,7 +385,7 @@ export default {
         // 热门推荐
         recommendList() {
             let vm = this;
-            axios.get('https://musicapi.leanapp.cn/personalized').then(function (res) {
+            axios.get('http://musicapi.leanapp.cn/personalized').then(function (res) {
                 let arr = res.data.result;
                 vm.rList = arr.slice(0, 8);
                 vm.perList = arr.slice(8, 11);
@@ -387,7 +396,7 @@ export default {
         // 新碟上架
         album() {
             let vm = this;
-            axios.get('https://musicapi.leanapp.cn/top/album', {
+            axios.get('http://musicapi.leanapp.cn/top/album', {
                 params: {
                     offset: 0,
                     limit: 10
@@ -400,22 +409,41 @@ export default {
                 console.log(error);
             });
         },
-        songList(id, type) {
+        // banner
+        getBanner() {
             let vm = this;
-            axios.get('https://api.itooi.cn/music/netease/songList', {
+            let promise = new Promise((resolve, reject) => {
+                axios.get('http://musicapi.leanapp.cn/banner', {
+                    params: {
+                        type: 0
+                    }
+                }).then(function (res) {
+                    vm.banners = res.data.banners;
+                    vm.bgColor = vm.banners[0].backgroundUrl;
+                    resolve(true);
+                }).catch(function (error) {
+                    console.log(error);
+                });
+            });
+            promise.then(function (data) {
+                if (data) {
+                    vm.swiperF();
+                }
+            });
+        },
+        songList(id) {
+            let vm = this;
+            axios.get('http://musicapi.leanapp.cn/top/list', {
                 params: {
-                    key: 579621905,
-                    id: id,
-                    limit: 10,
-                    offset: 0
+                    idx: id
                 }
             }).then(function (res) {
-                let data = res.data.data.songs;
-                if (type === 1) {
+                let data = res.data.playlist.tracks;
+                if (id === 3) {
                     vm.hotSong = data.slice(0, 10);
-                } else if (type === 2) {
+                } else if (id === 0) {
                     vm.newSong = data.slice(0, 10);
-                } else if (type === 3) {
+                } else if (id === 2) {
                     vm.nativeSong = data.slice(0, 10);
                 }
             }).catch(function (error) {
@@ -424,7 +452,7 @@ export default {
         },
         getArtist() {
             let vm = this;
-            axios.get('https://musicapi.leanapp.cn/artist/list', {
+            axios.get('http://musicapi.leanapp.cn/artist/list', {
                 params: {
                     cat: 5001,
                     limit: 5
@@ -434,13 +462,106 @@ export default {
             }).catch(function (error) {
                 console.log(error);
             });
+        },
+        playMusic(index, id, name, singer, picurl, tracks) {
+            let vm = this;
+            if (vm.getPlayInfo.index === index) {
+                vm.setPlayInfo({
+                    restart: !vm.getPlayInfo.restart
+                });
+            }
+            vm.setPlayInfo({
+                curlength: 0,
+                currentTime: 0,
+                index: index,
+                onplayflag: true,
+                name: name,
+                singer: singer,
+                picurl: picurl,
+                musicurl: 'http://music.163.com/song/media/outer/url?id=' + id + '.mp3',
+                id: id
+            });
+            vm.setPlayList({
+                list: tracks
+            });
+            vm.getLrc(id);
+        },
+        playAllMusic(songList) {
+            let vm = this;
+            vm.setPlayList({
+                list: songList
+            });
+            let item = songList[0];
+            vm.setPlayInfo({
+                index: 0,
+                onplayflag: true,
+                duration: item.dt / 1000,
+                currentTime: 0,
+                name: item.name,
+                singer: item.ar[0].name,
+                picurl: item.al.picUrl,
+                musicurl: 'http://music.163.com/song/media/outer/url?id=' + item.id + '.mp3',
+                curlength: 0,
+                id: item.id
+            });
+            vm.getLrc(item.id);
+        },
+        getLrc(id) {
+            let vm = this;
+            axios.get('https://v1.itooi.cn/netease/lrc', {
+                params: {
+                    id: id
+                }
+            }).then(function (res) {
+                let lrc = res.data;
+                vm.setPlayInfo({
+                    lrc: vm.parseLrc(lrc)
+                });
+            }).catch(function (error) {
+                console.log(error);
+            });
+        },
+        parseLrc(lrc) {
+            let arr = lrc.split('\n');
+            var lrcArray = [];
+            var html = '';
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] != '') {
+                    let temp = arr[i].split(']');
+                    if (temp.length > 1) {
+                        var offset = temp[0].substring(1, temp[0].length + 1);
+                        var text = temp[1];
+                        if (text != '') {
+                            lrcArray.push({ 'offset': offset, 'text': text });
+                        }
+                    }
+                }
+            }
+            return lrcArray;
         }
     }
 }
 </script>
-
-<style lang="less" scoped>
+<style lang="less">
 @import "swiper/dist/css/swiper.min.css";
+.swiper-pagination-bullets {
+    bottom: 5px !important;
+}
+.swiper-pagination-bullet {
+    width: 20px;
+    height: 20px;
+    background: url(../../../assets/banner.png) no-repeat;
+    background-position: 3px -343px;
+    opacity: 1;
+    &:focus {
+        outline: none;
+    }
+}
+.swiper-pagination-bullet-active {
+    background-position: -16px -343px;
+}
+</style>
+<style lang="less" scoped>
 @import "./recommend.less";
 </style>
 
