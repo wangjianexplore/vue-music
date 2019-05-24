@@ -8,7 +8,7 @@ import layleft from './layout/layleft.vue';
 import layright from './layout/layright.vue';
 import likeList from './likeList/likeList.vue';
 import userHeader from './userHeader/userHeader.vue';
-import tools from './tools/tools.js';
+import './tools/tools.js';
 
 const components = {
     install: function(Vue) {

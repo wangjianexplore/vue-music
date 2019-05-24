@@ -26,7 +26,7 @@
                                 </div>
                                 <div class="play">
                                     <ul>
-                                        <li class="li_one" @click="playMusic()">
+                                        <li class="li_one" @click="playMusicBtn()">
                                             播放
                                         </li>
                                         <li class="li_two"></li>
@@ -85,7 +85,8 @@ export default {
             hotList: [],
             showFlag: false,
             songs: {},
-            lrc: []
+            lrc: [],
+            songId: this.$route.params.id
         }
     },
     computed: {
@@ -97,18 +98,28 @@ export default {
         vm.getComment();
         vm.getLrc();
         vm.getHotList();
-        vm.getLikeUser();
+    },
+    watch: {
+        $route() {
+            this.songId = this.$route.params.id;
+        },
+        songId(val) {
+            this.getDetails();
+            this.getComment();
+            this.getLrc();
+            this.getHotList();
+        }
     },
     methods: {
         ...mapMutations([
-            'setPlayInfo', 'setPlayList'
+            'setPlayInfo'
         ]),
-        playMusic() {
+        playMusicBtn() {
             let vm = this;
-            let num = 0;
+            let num = -1;
             for (let i = 0; i < vm.getPlayList.list.length; i++) {
                 let item = vm.getPlayList.list[i];
-                if (item.id == vm.$route.params.id) {
+                if (item.id == vm.songId) {
                     num = i
                     if (vm.getPlayInfo.index === i) {
                         vm.setPlayInfo({
@@ -118,7 +129,7 @@ export default {
                     break;
                 }
             }
-            if (num == 0) {
+            if (num == -1) {
                 vm.getPlayList.list.push(vm.songs);
                 num = vm.getPlayList.list.length - 1;
             }
@@ -130,8 +141,8 @@ export default {
                 name: vm.songs.name,
                 singer: vm.songs.ar[0].name,
                 picurl: vm.songs.al.picUrl,
-                musicurl: 'https://music.163.com/song/media/outer/url?id=' + vm.$route.params.id + '.mp3',
-                id: vm.$route.params.id,
+                musicurl: 'https://music.163.com/song/media/outer/url?id=' + vm.songId + '.mp3',
+                id: vm.songId,
                 lrc: vm.lrc
             });
         },
@@ -139,7 +150,7 @@ export default {
             let vm = this;
             axios.get('https://musicapi.leanapp.cn/song/detail', {
                 params: {
-                    ids: vm.$route.params.id
+                    ids: vm.songId
                 }
             }).then(function (res) {
                 vm.songs = res.data.songs[0];
@@ -147,23 +158,11 @@ export default {
                 console.log(res);
             });
         },
-        getLikeUser() {
-            let vm = this;
-            axios.get('https://musicapi.leanapp.cn/simi/user', {
-                params: {
-                    id: vm.$route.params.id
-                }
-            }).then(function (res) {
-                vm.lrc = vm.parseLrc(res.data.lrc.lyric);
-            }).catch(function (error) {
-                console.log(error);
-            });
-        },
         getLrc() {
             let vm = this;
             axios.get('https://v1.itooi.cn/netease/lrc', {
                 params: {
-                    id: vm.$route.params.id
+                    id: vm.songId
                 }
             }).then(function (res) {
                 vm.lrc = vm.parseLrc(res.data);

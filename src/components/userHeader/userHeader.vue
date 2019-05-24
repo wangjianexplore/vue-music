@@ -3,15 +3,15 @@
         <div class="wrap">
             <div class="head">
                 <div class="head_left">
-                    <img src="https://p1.music.126.net/p9U80ex1B1ciPFa125xV5A==/5931865232210340.jpg?param=180y180" class="h_img" alt="">
+                    <img :src="profile.avatarUrl" class="h_img" alt="">
                 </div>
                 <div class="head_right">
                     <div class="hr_one">
                         <div class="one_top">
                             <h2>
-                                <span class="name">张惠妹aMEI</span>
+                                <span class="name">{{profile.nickname}}</span>
                                 <span class="level">
-                                    1
+                                    {{level}}
                                     <i class="i_level"></i>
                                 </span>
                                 <span class="icon"></span>
@@ -20,33 +20,33 @@
                                 <span class="send">发私信</span>
                                 <span class="foucs">关 注</span>
                             </div>
-                            <div class="look" @click="$router.push('/artist')">
+                            <div v-if="profile.userType!=0" class="look" @click="$router.push('/artist')">
                                 <i class="i_look">查看歌手页</i>
                             </div>
                         </div>
                         <div class="one_bot">
                             <i class="tag"></i>
-                            台湾歌手张惠妹
+                            {{profile.description}}
                         </div>
                     </div>
                     <div class="hr_two">
                         <ul>
                             <li class="li_two">
-                                <div class="dt_num" @click="$router.push('/user/event')">1</div>
+                                <div class="dt_num" @click="$router.push('/user/event')">{{profile.authStatus}}</div>
                                 <div class="dt" @click="$router.push('/user/event')">动态</div>
                             </li>
                             <li class="">
-                                <div class="dt_num" @click="$router.push('/user/follows')">10</div>
+                                <div class="dt_num" @click="$router.push('/user/follows')">{{profile.djStatus}}</div>
                                 <div class="dt" @click="$router.push('/user/follows')">关注</div>
                             </li>
                             <li class="">
-                                <div class="dt_num" @click="$router.push('/user/fans')">533245</div>
+                                <div class="dt_num" @click="$router.push('/user/fans')">{{profile.followeds}}</div>
                                 <div class="dt" @click="$router.push('/user/fans')">粉丝</div>
                             </li>
                         </ul>
                     </div>
                     <div class="hr_three">
-                        个人介绍：亞洲國寶級傳奇天后「 a MEI」我是a MEI，一個你認識很久，卻認識不完的女人。
+                        个人介绍：{{profile.signature}}。
                     </div>
                     <div class="hr_three hr_four">
                         所在地区：台湾省 - 台北市
@@ -56,6 +56,25 @@
         </div>
     </div>
 </template>
+<script>
+export default {
+    name: 'userHeader',
+    data() {
+        return {}
+    },
+    props: {
+        level: {
+            type: Number,
+            default: 1
+        },
+        profile: {
+            type: Object,
+            default: {}
+        }
+    }
+}
+</script>
+
 <style lang="less" scoped>
 .homemain {
     width: 980px;
@@ -145,8 +164,7 @@
             margin: 4px 0 0 15px;
             width: 75px;
             height: 31px;
-            background: url(../../assets/button.png)
-                no-repeat;
+            background: url(../../assets/button.png) no-repeat;
             background-position: 0 -810px;
             line-height: 29px;
             padding-left: 30px;
@@ -157,8 +175,7 @@
             width: 70px;
             height: 31px;
             padding-left: 30px;
-            background: url(../../assets/button.png)
-                no-repeat;
+            background: url(../../assets/button.png) no-repeat;
             background-position: 0 -720px;
             color: #fff;
             line-height: 30px;
@@ -167,15 +184,13 @@
             float: right;
             margin-top: 4px;
             color: #333;
-            background: url(../../assets/button2.png)
-                no-repeat;
+            background: url(../../assets/button2.png) no-repeat;
             background-position: right -100px;
             padding: 0 5px 0 0;
         }
         .i_look {
             color: #333;
-            background: url(../../assets/button2.png)
-                no-repeat;
+            background: url(../../assets/button2.png) no-repeat;
             background-position: 0 -59px;
             padding: 0 15px 0 20px;
             height: 31px;

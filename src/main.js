@@ -8,10 +8,17 @@ import './less/public.less'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import components from './components/index';
+import VueLazyload from 'vue-lazyload'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI);
 Vue.use(components);
+Vue.use(VueLazyload, {
+  preLoad: 1.3,
+  error: '',
+  loading: '',
+  attempt: 1
+})
 
 /* eslint-disable no-new */
 new Vue({

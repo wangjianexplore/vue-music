@@ -56,7 +56,7 @@ const routes = [{
   name: 'user',
   component: resolve => require(['@/web/user/user'], resolve),
   children: [{
-    path: '',
+    path: 'home/:uid',
     name: 'home',
     component: resolve => require(['@/web/user/home/home'], resolve)
   }, {
@@ -73,7 +73,7 @@ const routes = [{
     component: resolve => require(['@/web/user/fans/fans'], resolve)
   }]
 }, {
-  path: '/artist',
+  path: '/artist/:id',
   name: 'artist',
   component: resolve => require(['@/web/artist/artist'], resolve)
 }]

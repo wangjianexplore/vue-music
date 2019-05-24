@@ -4,14 +4,14 @@
         <el-row class="row-swiper" :style='{background:"url("+bgColor+")"}'>
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide" v-for="(item,index) in banners" :key="index+item.targetId"><img :src="item.picUrl" alt="" /></div>
+                    <div class="swiper-slide" v-for="(item,index) in banners" :key="index+item.targetId"><img v-lazy="item.picUrl" alt="" /></div>
                 </div>
                 <!-- 如果需要分页器 -->
                 <div class="swiper-pagination"></div>
                 <!-- 如果需要导航按钮 -->
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
-                <div class="dowmload">
+                <div class="dowmload" @click="test(1,2)">
                     <span>PC 安卓 iPhone WP iPad Mac 六大客户端</span>
                 </div>
             </div>
@@ -20,7 +20,7 @@
             <div class="songMain">
                 <div class="songRight">
                     <div class="rightMain">
-                        <div class="r-wrap">
+                        <div class="r-wrap r-wrap2">
                             <div class="r-header">
                                 <span class="hot">热门推荐</span>
                                 <ul>
@@ -39,7 +39,7 @@
                             <div class="r-bottom">
                                 <el-row class="row-song">
                                     <el-col :span="6" class="song-col" v-for="(item,index) in rList" :key="index">
-                                        <img @click="$router.push('/listDetails/' + item.id)" :src="item.picUrl" alt="">
+                                        <img @click="$router.push('/listDetails/' + item.id)" v-lazy="item.picUrl" alt="">
                                         <div @click="$router.push('/listDetails/' + item.id)" class="songTitle">{{item.name}}</div>
                                         <div @click="$router.push('/listDetails/' + item.id)" class="sBottom">
                                             <span class="music-logo"></span>
@@ -65,7 +65,7 @@
                                         <div class="song-detail">根据你的口味生成，每天6:00更新</div>
                                     </el-col>
                                     <el-col :span="6" class="song-col" v-for="(item,index) in perList" :key="index">
-                                        <img :src="item.picUrl" @click="$router.push('/listDetails/' + item.id)" alt="">
+                                        <img v-lazy="item.picUrl" @click="$router.push('/listDetails/' + item.id)" alt="">
                                         <div class="songTitle" @click="$router.push('/listDetails/' + item.id)">{{item.name}}</div>
                                         <div class="song-detail">{{item.copywriter}}</div>
                                         <div class="sBottom">
@@ -89,7 +89,7 @@
                                             <el-row class="swiper2-row">
                                                 <el-col v-for="(item,index) in newList1" :key="index">
                                                     <div class="bg" @click="$router.push('/listDetails/' + item.id)"></div>
-                                                    <img class="img_new" :src="item.picUrl" alt="" />
+                                                    <img class="img_new" v-lazy="item.picUrl" alt="" />
                                                     <div class="text01">{{item.name}}</div>
                                                     <div class="text02">{{item.artist.name}}</div>
                                                     <div class="shadow"></div>
@@ -100,7 +100,7 @@
                                             <el-row class="swiper2-row">
                                                 <el-col v-for="(item,index) in newList2" :key="index">
                                                     <div class="bg" @click="$router.push('/listDetails/' + item.id)"></div>
-                                                    <img class="img_new" :src="item.picUrl" alt="" />
+                                                    <img class="img_new" v-lazy="item.picUrl" alt="" />
                                                     <div class="text01">{{item.name}}</div>
                                                     <div class="text02">{{item.company}}</div>
                                                     <div class="shadow"></div>
@@ -122,9 +122,9 @@
                                 <el-row>
                                     <el-col :span="8">
                                         <div class="board-top">
-                                            <img src="http://p4.music.126.net/DrRIg6CrgDfVLEph9SNh7w==/18696095720518497.jpg?param=100y100" alt="">
+                                            <img v-lazy="hotSongUrl" alt="">
                                             <div class="board-right">
-                                                <div class="playbtn" @click="playAllMusic(hotSong)"></div>
+                                                <div class="playbtn" @click="playMusic(sendMusicInfo(0,hotSong[0].id,hotSong[0].name,hotSong[0].ar[0].name,hotSong[0].al.picUrl,hotSong,true))"></div>
                                                 <div>云音乐飙升榜</div>
                                                 <div class="shouc"></div>
                                             </div>
@@ -134,7 +134,7 @@
                                                 <span class="board-num" v-bind:class="{num_red:index<=2}">{{index+1}}</span>
                                                 <span class="board-title">{{item.name}}</span>
                                                 <div class="per">
-                                                    <span class="per_play" @click="playMusic(index,item.id,item.name,item.ar[0].name,item.al.picUrl,hotSong)"></span>
+                                                    <span class="per_play" @click="playMusic(sendMusicInfo(index,item.id,item.name,item.ar[0].name,item.al.picUrl,hotSong,false,hotSong[index]))"></span>
                                                     <span class="per_add"></span>
                                                     <span class="per_sc"></span>
                                                 </div>
@@ -146,9 +146,9 @@
                                     </el-col>
                                     <el-col :span="8">
                                         <div class="board-top">
-                                            <img src="http://p4.music.126.net/N2HO5xfYEqyQ8q6oxCw8IQ==/18713687906568048.jpg?param=100y100" alt="">
+                                            <img v-lazy="newSongUrl" alt="">
                                             <div class="board-right">
-                                                <div class="playbtn" @click="playAllMusic(newSong)"></div>
+                                                <div class="playbtn" @click="playMusic(sendMusicInfo(0,newSong[0].id,newSong[0].name,newSong[0].ar[0].name,newSong[0].al.picUrl,newSong,true))"></div>
                                                 <div>云音乐新歌榜</div>
                                                 <div class="shouc"></div>
                                             </div>
@@ -158,7 +158,7 @@
                                                 <span class="board-num" v-bind:class="{num_red:index<=2}">{{index+1}}</span>
                                                 <span class="board-title">{{item.name}}</span>
                                                 <div class="per">
-                                                    <span class="per_play" @click="playMusic(index,item.id,item.name,item.ar[0].name,item.al.picUrl,newSong)"></span>
+                                                    <span class="per_play" @click="playMusic(sendMusicInfo(index,item.id,item.name,item.ar[0].name,item.al.picUrl,newSong,false,newSong[index]))"></span>
                                                     <span class="per_add"></span>
                                                     <span class="per_sc"></span>
                                                 </div>
@@ -170,9 +170,9 @@
                                     </el-col>
                                     <el-col :span="8">
                                         <div class="board-top">
-                                            <img src="http://p3.music.126.net/sBzD11nforcuh1jdLSgX7g==/18740076185638788.jpg?param=100y100" alt="">
+                                            <img v-lazy="nativeSongUrl" alt="">
                                             <div class="board-right">
-                                                <div class="playbtn" @click="playAllMusic(nativeSong)"></div>
+                                                <div class="playbtn" @click="playMusic(sendMusicInfo(0,nativeSong[0].id,nativeSong[0].name,nativeSong[0].ar[0].name,nativeSong[0].al.picUrl,nativeSong,true))"></div>
                                                 <div>网易原创歌曲榜</div>
                                                 <div class="shouc"></div>
                                             </div>
@@ -182,7 +182,7 @@
                                                 <span class="board-num" v-bind:class="{num_red:index<=2}">{{index+1}}</span>
                                                 <span class="board-title">{{item.name}}</span>
                                                 <div class="per">
-                                                    <span class="per_play" @click="playMusic(index,item.id,item.name,item.ar[0].name,item.al.picUrl,nativeSong)"></span>
+                                                    <span class="per_play" @click="playMusic(sendMusicInfo(index,item.id,item.name,item.ar[0].name,item.al.picUrl,nativeSong,false,nativeSong[index]))"></span>
                                                     <span class="per_add"></span>
                                                     <span class="per_sc"></span>
                                                 </div>
@@ -233,9 +233,9 @@
                         </div>
                         <div class="singer-list">
                             <ul>
-                                <li v-for="(item, index) in rzSinger" @click="$router.push('/user')" :key="index + item.id">
+                                <li v-for="(item, index) in rzSinger" @click="$router.push('/user/home/'+item.accountId)" :key="index + item.id">
                                     <div class="singer-img">
-                                        <img :src="item.picUrl" alt="">
+                                        <img v-lazy="item.picUrl" alt="">
                                     </div>
                                     <div class="singer-info">
                                         <p class="singer-name">{{item.name}}</p>
@@ -251,47 +251,47 @@
                         <div class="anchor-li">
                             <ul>
                                 <li>
-                                    <div class="anchor-img" @click="$router.push('/user')">
+                                    <div class="anchor-img">
                                         <img src="http://p2.music.126.net/H3QxWdf0eUiwmhJvA4vrMQ==/1407374893913311.jpg?param=40y40" alt="">
                                     </div>
                                     <div class="anchor-info">
-                                        <p class="anchor-name" @click="$router.push('/user')">陈立</p>
+                                        <p class="anchor-name">陈立</p>
                                         <p class="anchor-tl">心理学家、美食家陈立教授</p>
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="anchor-img" @click="$router.push('/user')">
+                                    <div class="anchor-img">
                                         <img src="http://p2.music.126.net/y5-sM7tjnxnu_V9LWKgZlw==/7942872001461517.jpg?param=40y40" alt="">
                                     </div>
                                     <div class="anchor-info">
-                                        <p class="anchor-name" @click="$router.push('/user')">DJ艳秋</p>
+                                        <p class="anchor-name">DJ艳秋</p>
                                         <p class="anchor-tl">著名音乐节目主持人</p>
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="anchor-img" @click="$router.push('/user')">
+                                    <div class="anchor-img">
                                         <img src="http://p2.music.126.net/6cc6lgOfQTo6ovNnTHPyJg==/3427177769086282.jpg?param=40y40" alt="">
                                     </div>
                                     <div class="anchor-info">
-                                        <p class="anchor-name" @click="$router.push('/user')">国家大剧院古典音乐频道</p>
+                                        <p class="anchor-name">国家大剧院古典音乐频道</p>
                                         <p class="anchor-tl">国家大剧院古典音乐官方</p>
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="anchor-img" @click="$router.push('/user')">
+                                    <div class="anchor-img">
                                         <img src="http://p2.music.126.net/xa1Uxrrn4J0pm_PJwkGYvw==/3130309604335651.jpg?param=40y40" alt="">
                                     </div>
                                     <div class="anchor-info">
-                                        <p class="anchor-name" @click="$router.push('/user')">DJ晓苏</p>
+                                        <p class="anchor-name">DJ晓苏</p>
                                         <p class="anchor-tl">独立DJ，CRI环球旅游广播特邀DJ</p>
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="anchor-img" @click="$router.push('/user')">
+                                    <div class="anchor-img">
                                         <img src="http://p2.music.126.net/slpd09Tf5Ju82Mv-h8MP4w==/3440371884651965.jpg?param=40y40" alt="">
                                     </div>
                                     <div class="anchor-info">
-                                        <p class="anchor-name" @click="$router.push('/user')">陈立</p>
+                                        <p class="anchor-name">陈立</p>
                                         <p class="anchor-tl">心理学家、美食家陈立教授</p>
                                     </div>
                                 </li>
@@ -305,7 +305,7 @@
     </div>
 </template>
 <script>
-import { mapGetters, mapMutations } from 'vuex';
+import { mapActions } from 'vuex';
 import Swiper from 'swiper';
 import axios from 'axios';
 export default {
@@ -321,8 +321,12 @@ export default {
             hotSong: [],
             newSong: [],
             nativeSong: [],
+            hotSongUrl: [],
+            newSongUrl: [],
+            nativeSongUrl: [],
             rzSinger: [],
-            banners: []
+            banners: [],
+            errorTime: 0
         }
     },
     mounted() {
@@ -335,13 +339,24 @@ export default {
         this.songList(0);
         this.songList(2);
     },
-    computed: {
-        ...mapGetters(['getPlayInfo'])
+    watch: {
+        errorTime: function (val) {
+            if (val > 4) {
+                this.open();
+            }
+        }
     },
     methods: {
-        ...mapMutations([
-            'setPlayInfo', 'setPlayList'
+        ...mapActions([
+            'playMusic'
         ]),
+        open() {
+            this.$alert('抱歉，接口挂掉了！！', {
+                confirmButtonText: '确定',
+                center: true,
+                showClose: false
+            });
+        },
         swiperF() {
             let vm = this;
             vm.$nextTick(() => {
@@ -390,6 +405,7 @@ export default {
                 vm.rList = arr.slice(0, 8);
                 vm.perList = arr.slice(8, 11);
             }).catch(function (error) {
+                vm.errorTime++;
                 console.log(error);
             });
         },
@@ -406,6 +422,7 @@ export default {
                 vm.newList1 = arr.slice(0, 5);
                 vm.newList2 = arr.slice(5, 10);
             }).catch(function (error) {
+                vm.errorTime++;
                 console.log(error);
             });
         },
@@ -422,6 +439,7 @@ export default {
                     vm.bgColor = vm.banners[0].backgroundUrl;
                     resolve(true);
                 }).catch(function (error) {
+                    vm.errorTime++;
                     console.log(error);
                 });
             });
@@ -438,15 +456,19 @@ export default {
                     idx: id
                 }
             }).then(function (res) {
-                let data = res.data.playlist.tracks;
+                let data = res.data.playlist;
                 if (id === 3) {
-                    vm.hotSong = data.slice(0, 10);
+                    vm.hotSong = data.tracks.slice(0, 10);
+                    vm.hotSongUrl = data.coverImgUrl;
                 } else if (id === 0) {
-                    vm.newSong = data.slice(0, 10);
+                    vm.newSong = data.tracks.slice(0, 10);
+                    vm.newSongUrl = data.coverImgUrl;
                 } else if (id === 2) {
-                    vm.nativeSong = data.slice(0, 10);
+                    vm.nativeSong = data.tracks.slice(0, 10);
+                    vm.nativeSongUrl = data.coverImgUrl;
                 }
             }).catch(function (error) {
+                vm.errorTime++;
                 console.log(error);
             });
         },
@@ -460,84 +482,9 @@ export default {
             }).then(function (res) {
                 vm.rzSinger = res.data.artists
             }).catch(function (error) {
+                vm.errorTime++;
                 console.log(error);
             });
-        },
-        playMusic(index, id, name, singer, picurl, tracks) {
-            let vm = this;
-            if (vm.getPlayInfo.index === index) {
-                vm.setPlayInfo({
-                    restart: !vm.getPlayInfo.restart
-                });
-            }
-            vm.setPlayInfo({
-                curlength: 0,
-                currentTime: 0,
-                index: index,
-                onplayflag: true,
-                name: name,
-                singer: singer,
-                picurl: picurl,
-                musicurl: 'http://music.163.com/song/media/outer/url?id=' + id + '.mp3',
-                id: id
-            });
-            vm.setPlayList({
-                list: tracks
-            });
-            vm.getLrc(id);
-        },
-        playAllMusic(songList) {
-            let vm = this;
-            vm.setPlayList({
-                list: songList
-            });
-            let item = songList[0];
-            vm.setPlayInfo({
-                index: 0,
-                onplayflag: true,
-                duration: item.dt / 1000,
-                currentTime: 0,
-                name: item.name,
-                singer: item.ar[0].name,
-                picurl: item.al.picUrl,
-                musicurl: 'http://music.163.com/song/media/outer/url?id=' + item.id + '.mp3',
-                curlength: 0,
-                id: item.id
-            });
-            vm.getLrc(item.id);
-        },
-        getLrc(id) {
-            let vm = this;
-            axios.get('https://v1.itooi.cn/netease/lrc', {
-                params: {
-                    id: id
-                }
-            }).then(function (res) {
-                let lrc = res.data;
-                vm.setPlayInfo({
-                    lrc: vm.parseLrc(lrc)
-                });
-            }).catch(function (error) {
-                console.log(error);
-            });
-        },
-        parseLrc(lrc) {
-            let arr = lrc.split('\n');
-            var lrcArray = [];
-            var html = '';
-            for (let i = 0; i < arr.length; i++) {
-                if (arr[i] != '') {
-                    let temp = arr[i].split(']');
-                    if (temp.length > 1) {
-                        var offset = temp[0].substring(1, temp[0].length + 1);
-                        var text = temp[1];
-                        if (text != '') {
-                            lrcArray.push({ 'offset': offset, 'text': text });
-                        }
-                    }
-                }
-            }
-            return lrcArray;
         }
     }
 }
@@ -559,6 +506,9 @@ export default {
 }
 .swiper-pagination-bullet-active {
     background-position: -16px -343px;
+}
+.el-message-box__header {
+    padding-top: 15px !important;
 }
 </style>
 <style lang="less" scoped>

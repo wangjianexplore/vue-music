@@ -25,7 +25,7 @@
                     </div>
                     <div class="play">
                         <div class="words">
-                            <span class="name" @click="$router.push('/songDetail')">{{musicinfo.name}}</span>
+                            <span class="name" @click="$router.push('/songDetail/'+getPlayInfo.id)">{{musicinfo.name}}</span>
                             <span class="by">{{musicinfo.singer}}</span>
                             <span class="src"></span>
                         </div>
@@ -81,7 +81,7 @@
                         <div class="msk"></div>
                         <div class="listbdc">
                             <ul class="f-cb">
-                                <li class="col_li" :class="{'col_li_active':getPlayInfo.index==index}" v-for="(item, index) in getPlayList.list" :key="index">
+                                <!-- <li class="col_li" :class="{'col_li_active':getPlayInfo.index==index}" v-for="(item, index) in getPlayList.list" :key="index">
                                     <div class="col col-1">
                                         <div class="playicn" v-if="getPlayInfo.index==index"></div>
                                     </div>
@@ -97,7 +97,7 @@
                                     <div class="col col-4">{{item.ar[0].name}}</div>
                                     <div class="col col-5">{{getTime(parseInt(item.dt/1000/60))}}:{{getTime(parseInt(item.dt/1000%60))}}</div>
                                     <div class="col col-6"></div>
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
                         <div class="msk2"></div>
@@ -164,9 +164,6 @@ export default {
     watch: {
         playState: function (a, b) {
             let vm = this;
-            vm.curlength = 0;
-            vm.duration = 0;
-            vm.currentTime = 0;
             if (b) {
                 vm.autoplay = false;
                 vm.$refs.musicref.pause();

@@ -17,7 +17,7 @@
                 <div class="sl_bot">
                     <ul>
                         <li v-for="(item, index) in tracks" :key="index">
-                            <div class="head index">{{index+1}}<span class="play" @click="playMusic(index,item.id,item.name,item.ar[0].name,item.al.picUrl,tracks)"></span></div>
+                            <div class="head index">{{index+1}}<span class="play" @click="playMusic(sendMusicInfo(index,item.id,item.name,item.ar[0].name,item.al.picUrl,tracks,false,tracks[index]))"></span></div>
                             <div class="head title" @click="$router.push('/songDetail/'+item.id)" v-text="item.name"></div>
                             <div class="head time">{{getTime(parseInt(item.dt/60/1000))}}:{{getTime(parseInt(item.dt/1000%60))}}</div>
                             <div class="head singer" v-text="item.ar[0].name"></div>
@@ -30,14 +30,12 @@
     </div>
 </template>
 <script>
-import { mapGetters, mapMutations } from 'vuex';
+import { mapActions } from 'vuex';
 import axios from 'axios';
 export default {
     name: 'songList',
     data() {
-        return {
-            // musicSrc: ''
-        }
+        return {}
     },
     props: {
         tracks: {
@@ -53,25 +51,9 @@ export default {
             default: 0
         }
     },
-    computed: {
-        ...mapGetters(['getPlayInfo', 'getPlayList'])
-        // playState() {
-        //     return this.getPlayInfo.onplayflag;
-        // }
-    },
-    watch: {
-        // playState: function (a, b) {
-        //     let vm = this;
-        //     if (b) {
-        //         vm.$refs.musicref.pause();
-        //     } else {
-        //         vm.$refs.musicref.play();
-        //     }
-        // }
-    },
     methods: {
-        ...mapMutations([
-            'setPlayInfo', 'setPlayList'
+        ...mapActions([
+            'playMusic'
         ]),
         getTime(arg) {
             var args = arg.toString();
@@ -80,79 +62,6 @@ export default {
             } else {
                 return args;
             }
-        },
-        playMusic(index, id, name, singer, picurl, tracks) {
-            let vm = this;
-            if (vm.getPlayInfo.index === index) {
-                vm.setPlayInfo({
-                    restart: !vm.getPlayInfo.restart
-                });
-            }
-            vm.setPlayInfo({
-                curlength: 0,
-                currentTime: 0,
-                index: index,
-                onplayflag: true,
-                name: name,
-                singer: singer,
-                picurl: picurl,
-                musicurl: 'https://music.163.com/song/media/outer/url?id=' + id + '.mp3',
-                id: id
-            });
-            vm.setPlayList({
-                list: tracks
-            });
-            // vm.getMusicUrl(id);
-            vm.getLrc(id);
-        },
-        getMusicUrl(id) {
-            let vm = this;
-            axios.get('https://musicapi.leanapp.cn/song/url', {
-                params: {
-                    id: id
-                }
-            }).then(function (res) {
-                let lrc = res.data;
-                vm.setPlayInfo({
-                    lrc: vm.parseLrc(lrc)
-                });
-            }).catch(function (error) {
-                console.log(error);
-            });
-        },
-        getLrc(id) {
-            let vm = this;
-            axios.get('https://v1.itooi.cn/netease/lrc', {
-                params: {
-                    id: id
-                }
-            }).then(function (res) {
-                let lrc = res.data;
-                // vm.parseLrc(lrc);
-                vm.setPlayInfo({
-                    lrc: vm.parseLrc(lrc)
-                });
-            }).catch(function (error) {
-                console.log(error);
-            });
-        },
-        parseLrc(lrc) {
-            let arr = lrc.split('\n');
-            var lrcArray = [];
-            var html = '';
-            for(let i =0; i < arr.length; i++) {
-                if (arr[i] != '') {
-                    let temp = arr[i].split(']');
-                    if (temp.length > 1) {
-                        var offset = temp[0].substring(1, temp[0].length + 1);
-                        var text = temp[1];
-                        if (text != '') {
-                            lrcArray.push({'offset': offset, 'text': text});
-                        }
-                    }
-                }
-            }
-            return lrcArray;
         }
     }
 }

@@ -45,10 +45,7 @@ export default {
         },
         creator: {
             type: Object,
-            default: {
-                avatarUrl: '',
-                nickname: ''
-            }
+            default: {}
         }
     },
     mounted () {

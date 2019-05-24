@@ -26,7 +26,25 @@ Vue.prototype.formatDate = function (dateTime, fmt) { // author: meizz
     } else {
         return '';
     }
-};
+}
+
+// 处理歌曲数据格式送往vuex（因为action中只接收一个参数）
+Vue.prototype.sendMusicInfo = function(index, id, name, singer, picurl, tracks, listFlag = false, theMusic = {}) {
+    return {
+        curlength: 0,
+        currentTime: 0,
+        index: index,
+        onplayflag: true,
+        name: name,
+        singer: singer,
+        picurl: picurl,
+        musicurl: 'http://music.163.com/song/media/outer/url?id=' + id + '.mp3',
+        id: id,
+        theMusic: theMusic,
+        list: tracks,
+        listFlag: listFlag
+    }
+}
 
 function isString(obj) {
     return Object.prototype.toString.call(obj) === '[object String]' || Object.prototype.toString.call(obj) === '[object Number]';

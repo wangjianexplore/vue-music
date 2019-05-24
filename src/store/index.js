@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import VuexPersistence from 'vuex-persist';
+import axios from 'axios';
 Vue.use(Vuex);
 const state = {
     playInfo: {
@@ -66,6 +67,57 @@ const actions = {
     },
     SetPlayBtnInfo({ commit }, info) {
         commit('setPlayBtnInfo', info);
+    },
+    playMusic({ commit, state }, playInfo) {
+        // 判断是播放一首还是一个歌单
+        if (playInfo.listFlag) {
+            commit('setPlayList', {list: playInfo.list});
+        } else {
+            let list = state.playList.list;
+            let arr = [];
+            for (let i = 0; i < list.length; i++) {
+                let item = list[i];
+                arr.push(item.id);
+            }
+            if (arr.indexOf(playInfo.id) == -1) {
+                playInfo.index = list.length;
+                alert(playInfo.index);
+                state.playList.list.push(playInfo.theMusic);
+            }
+        }
+        if (state.playInfo.index == playInfo.index && state.playInfo.id == playInfo.id) {
+            commit('setPlayInfo', {restart: !state.playInfo.restart});
+        }
+        commit('setPlayInfo', playInfo);
+        // 获取歌词
+        axios.get('https://v1.itooi.cn/netease/lrc', {
+            params: {
+                id: playInfo.id
+            }
+        }).then(function (res) {
+            let lrcObj = {};
+            lrcObj.lrc = actions.parseLrc(res.data);
+            commit('setPlayInfo', lrcObj);
+        }).catch(function (error) {
+            console.log(error);
+        });
+    },
+    parseLrc(lrc) {
+        let arr = lrc.split('\n');
+        var lrcArray = [];
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] != '') {
+                let temp = arr[i].split(']');
+                if (temp.length > 1) {
+                    var offset = temp[0].substring(1, temp[0].length + 1);
+                    var text = temp[1];
+                    if (text != '') {
+                        lrcArray.push({ 'offset': offset, 'text': text });
+                    }
+                }
+            }
+        }
+        return lrcArray;
     }
 }
 const getters = {

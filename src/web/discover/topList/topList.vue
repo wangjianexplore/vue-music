@@ -64,7 +64,7 @@
                                         <span class="item item02" :class="{item08:index>=4}">
                                             <img v-if="index<4" @click="$router.push('/songDetail/'+item.id)" :src="item.al.picUrl" alt="">
                                             <span class="song-nane">
-                                                <div class="play" @click="playMusic(index,item.id,item.name,item.ar[0].name,item.al.picUrl,tracks)" :class="{play2:index>=4}"></div>
+                                                <div class="play" @click="playMusic(sendMusicInfo(index,item.id,item.name,item.ar[0].name,item.al.picUrl,tracks))" :class="{play2:index>=4}"></div>
                                                 <span class="name" @click="$router.push('/songDetail/'+item.id)">{{item.name}}</span>
                                             </span>
                                         </span>
@@ -82,7 +82,7 @@
     </div>
 </template>
 <script>
-import { mapGetters, mapMutations } from 'vuex';
+import { mapMutations, mapActions } from 'vuex';
 import axios from 'axios';
 export default {
     name: 'topList',
@@ -101,12 +101,12 @@ export default {
         vm.songList(vm.$route.params.id);
         vm.getToplist();
     },
-    computed: {
-        ...mapGetters(['getPlayInfo'])
-    },
     methods: {
         ...mapMutations([
-            'setPlayInfo', 'setPlayList', 'setPlayBtnInfo'
+            'setPlayList', 'setPlayBtnInfo'
+        ]),
+        ...mapActions([
+            'playMusic'
         ]),
         getTime(arg) {
             var args = arg.toString();
@@ -179,62 +179,6 @@ export default {
             }).catch(function (res) {
                 console.log(res);
             });
-        },
-        playMusic(index, id, name, singer, picurl, tracks) {
-            let vm = this;
-            if (vm.getPlayInfo.index === index) {
-                vm.setPlayInfo({
-                    restart: !vm.getPlayInfo.restart
-                });
-            }
-            vm.setPlayInfo({
-                curlength: 0,
-                currentTime: 0,
-                index: index,
-                onplayflag: true,
-                name: name,
-                singer: singer,
-                picurl: picurl,
-                musicurl: 'http://music.163.com/song/media/outer/url?id=' + id + '.mp3',
-                id: id
-            });
-            vm.setPlayList({
-                list: tracks
-            });
-            vm.getLrc(id);
-        },
-        getLrc(id) {
-            let vm = this;
-            axios.get('https://v1.itooi.cn/netease/lrc', {
-                params: {
-                    id: id
-                }
-            }).then(function (res) {
-                let lrc = res.data;
-                vm.setPlayInfo({
-                    lrc: vm.parseLrc(lrc)
-                });
-            }).catch(function (error) {
-                console.log(error);
-            });
-        },
-        parseLrc(lrc) {
-            let arr = lrc.split('\n');
-            var lrcArray = [];
-            var html = '';
-            for (let i = 0; i < arr.length; i++) {
-                if (arr[i] != '') {
-                    let temp = arr[i].split(']');
-                    if (temp.length > 1) {
-                        var offset = temp[0].substring(1, temp[0].length + 1);
-                        var text = temp[1];
-                        if (text != '') {
-                            lrcArray.push({ 'offset': offset, 'text': text });
-                        }
-                    }
-                }
-            }
-            return lrcArray;
         }
     }
 }

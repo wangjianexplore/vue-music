@@ -4,29 +4,8 @@
         <div class="like_bot">
             <el-row class="like_row">
                 <el-col :span="6" class="like_col" v-for="(item, index) in likeList" :key="index">
-                    <img :src="item.avatarUrl" class="img" alt="">
+                    <img :src="item.avatarUrl" class="img" alt="" @click="$router.push('/user/home/'+item.userId)">
                 </el-col>
-                <!-- <el-col :span="6" class="like_col">
-                    <img src="https://p1.music.126.net/eW4ifgFuAmVRkOKDKwnYng==/18941286811950406.jpg?param=40y40" alt="">
-                </el-col>
-                <el-col :span="6" class="like_col">
-                    <img src="https://p1.music.126.net/eW4ifgFuAmVRkOKDKwnYng==/18941286811950406.jpg?param=40y40" alt="">
-                </el-col>
-                <el-col :span="6" class="like_col">
-                    <img src="https://p1.music.126.net/eW4ifgFuAmVRkOKDKwnYng==/18941286811950406.jpg?param=40y40" alt="">
-                </el-col>
-                <el-col :span="6" class="like_col">
-                    <img src="https://p1.music.126.net/eW4ifgFuAmVRkOKDKwnYng==/18941286811950406.jpg?param=40y40" alt="">
-                </el-col>
-                <el-col :span="6" class="like_col">
-                    <img src="https://p1.music.126.net/eW4ifgFuAmVRkOKDKwnYng==/18941286811950406.jpg?param=40y40" alt="">
-                </el-col>
-                <el-col :span="6" class="like_col">
-                    <img src="https://p1.music.126.net/eW4ifgFuAmVRkOKDKwnYng==/18941286811950406.jpg?param=40y40" alt="">
-                </el-col>
-                <el-col :span="6" class="like_col">
-                    <img src="https://p1.music.126.net/eW4ifgFuAmVRkOKDKwnYng==/18941286811950406.jpg?param=40y40" alt="">
-                </el-col> -->
             </el-row>
         </div>
     </div>
@@ -54,6 +33,7 @@ export default {
     height: 53px;
     .img {
         width: 100%;
+        cursor: pointer;
     }
 }
 .like_top {

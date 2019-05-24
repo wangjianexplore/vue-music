@@ -1,7 +1,7 @@
 <template>
     <div class="play">
         <ul>
-            <li class="li_one" @click="playMusic()">
+            <li class="li_one" @click="playMusic(sendMusicInfo(0,list[0].id,list[0].name,list[0].ar[0].name,list[0].al.picUrl,list,true))">
                 播放
             </li>
             <li class="li_two"></li>
@@ -13,75 +13,25 @@
     </div>
 </template>
 <script>
-import { mapGetters, mapMutations } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 import axios from 'axios';
 export default {
     name: 'songList',
     data() {
         return {
+            list: []
         }
+    },
+    mounted () {
+        this.list = this.getPlayList.songList
     },
     computed: {
         ...mapGetters(['getPlayList', 'getPlayBtnInfo'])
     },
     methods: {
-        ...mapMutations([
-            'setPlayInfo', 'setPlayList'
-        ]),
-        playMusic() {
-            let vm = this;
-            vm.setPlayList({
-                list: vm.getPlayList.songList
-            });
-            let item = vm.getPlayList.songList[0];
-            vm.setPlayInfo({
-                index: 0,
-                onplayflag: true,
-                duration: item.dt/1000,
-                currentTime: 0,
-                name: item.name,
-                singer: item.ar[0].name,
-                picurl: item.al.picUrl,
-                musicurl: 'http://music.163.com/song/media/outer/url?id=' + item.id + '.mp3',
-                curlength: 0,
-                id: item.id
-            });
-            vm.getLrc(item.id)
-        },
-        getLrc(id) {
-            let vm = this;
-            axios.get('https://v1.itooi.cn/netease/lrc', {
-                params: {
-                    id: id
-                }
-            }).then(function (res) {
-                let lrc = res.data;
-                // vm.parseLrc(lrc);
-                vm.setPlayInfo({
-                    lrc: vm.parseLrc(lrc)
-                });
-            }).catch(function (error) {
-                console.log(error);
-            });
-        },
-        parseLrc(lrc) {
-            let arr = lrc.split('\n');
-            var lrcArray = [];
-            var html = '';
-            for(let i =0; i < arr.length; i++) {
-                if (arr[i] != '') {
-                    let temp = arr[i].split(']');
-                    if (temp.length > 1) {
-                        var offset = temp[0].substring(1, temp[0].length + 1);
-                        var text = temp[1];
-                        if (text != '') {
-                            lrcArray.push({'offset': offset, 'text': text});
-                        }
-                    }
-                }
-            }
-            return lrcArray;
-        }
+        ...mapActions([
+            'playMusic'
+        ])
     }
 }
 </script>
