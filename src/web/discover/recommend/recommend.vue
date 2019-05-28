@@ -4,7 +4,7 @@
         <el-row class="row-swiper" :style='{background:"url("+bgColor+")"}'>
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide" v-for="(item,index) in banners" :key="index+item.targetId"><img v-lazy="item.picUrl" alt="" /></div>
+                    <div class="swiper-slide" @click="jump(item)" v-for="(item,index) in banners" :key="index+item.targetId"><img class="bannerimg" v-lazy="item.picUrl" alt="" /></div>
                 </div>
                 <!-- 如果需要分页器 -->
                 <div class="swiper-pagination"></div>
@@ -485,6 +485,15 @@ export default {
                 vm.errorTime++;
                 console.log(error);
             });
+        },
+        jump(item) {
+            if (item.targetType === '3000') {
+                window.open(item.url);
+            } if (item.targetType === '10' || item.targetType === '1000') {
+                this.$router.push('/listDetails/' + item.targetId);
+            } if (item.targetType === '1') {
+                this.$router.push('/songDetail/' + item.targetId);
+            }
         }
     }
 }
