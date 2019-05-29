@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>vue-music</title>
+  <style>
+    .moblie {
+      position: absolute;
+      top: 250px;
+      left: 0%;
+      z-index: 99;
+      margin-left: -125px;
+      animation: moblie-move 2s linear forwards;
+    }
+
+    .left {
+      float: left;
+      width: 256px;
+      height: 56px;
+      margin-top: 21px;
+      margin-left: -52px;
+      transform-origin: right center;
+      background: url(./ribbon3.png) no-repeat;
+      animation: plane-ribbon 1.5s linear forwards infinite;
+    }
+
+    .right {
+      float: left;
+      width: 104px;
+      height: 78px;
+      margin-left: -7px;
+      background: url(./airframe.png) no-repeat;
+    }
+
+    .screw {
+      display: block;
+      margin-top: 32px;
+      margin-left: 74px;
+      transform: rotateY(42deg);
+    }
+
+    .screw-in {
+      display: block;
+      width: 30px;
+      height: 30px;
+      background: url(./screw.png) no-repeat;
+      animation: plane-screw .6s linear forwards infinite;
+    }
+
+    @keyframes plane-screw {
+      0% {
+        transform: rotate(0);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes plane-ribbon {
+      25% {
+        transform: rotate(1deg);
+      }
+
+      50% {
+        transform: rotate(0);
+      }
+
+      75% {
+        transform: rotate(-1deg);
+      }
+
+      100% {
+        transform: rotate(0);
+      }
+    }
+
+    @keyframes moblie-move {
+      0% {
+        left: 0;
+      }
+
+      100% {
+        left: 50%;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="moblie">
+    <div class="left"></div>
+    <div class="right">
+      <div class="screw">
+        <div class="screw-in"></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

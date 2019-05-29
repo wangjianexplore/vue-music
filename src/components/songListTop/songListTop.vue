@@ -9,8 +9,8 @@
                 <span class="title" v-text="songTop.name"></span>
             </div>
             <div class="line02">
-                <img class="img02" :src="avatarUrl" alt="">
-                <span class="name" v-text="nickname"></span>
+                <img class="img02" :src="creator.avatarUrl?creator.avatarUrl:''" alt="">
+                <span class="name" v-text="creator.nickname?creator.nickname:''"></span>
                 <span class="create">{{formatDate(songTop.createTime, 'yyyy-MM-dd')}} 创建</span>
             </div>
             <songBtn></songBtn>
@@ -18,7 +18,7 @@
                 <span class="span_bq">标签：</span>
                 <span class="span" v-for="(item, index) in songTop.tags" :key="index"><i>{{item}}</i></span>
             </div>
-            <div class="desc" v-if="songTop.description" :class="{desc_auto:showFlag}" v-html="songTop.description">
+            <div class="desc" ref="desc" v-if="songTop.description" :class="{desc_auto:showFlag}" v-html="songTop.description">
             </div>
             <div class="open" v-if="songTop.description">
                 <span class="span_icon" @click="showFlag=!showFlag">{{showFlag==false?'展开':'收起'}}<i class="u-icn" :class="{u_icn2:showFlag==true}"></i></span>
@@ -49,15 +49,15 @@ export default {
         }
     },
     mounted () {
-        this.avatarUrl = this.creator.avatarUrl;
-        this.nickname = this.creator.nickname;
+    },
+    updated () {
+        console.log(this.$refs.desc);
     }
 }
 </script>
 
 <style lang="less" scoped>
 .myr_top {
-    // padding: 40px;
     overflow: hidden;
     .w_img {
         width: 208px;

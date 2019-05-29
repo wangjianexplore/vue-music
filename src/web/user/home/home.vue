@@ -7,7 +7,7 @@
                 <div class="list">
                     <div class="list_title">
                         <h3 class="t_h3">听歌排行</h3>
-                        <h4 class="t_h4">累积听歌29首</h4>
+                        <h4 class="t_h4">累积听歌{{songList.length}}首</h4>
                         <span class="t_icon"></span>
                         <div class="t_time">
                             <span class="t_all" :class="{t_week:weekFlag}" @click="weekFlag=true;songList=weekData">最近一周</span>

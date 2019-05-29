@@ -7,7 +7,6 @@
     </div>
 </template>
 <script>
-
 // import { FacebookLoader } from 'vue-content-loader'
 import pageHeader from '../pageHeader/pageHeader.vue';
 import pageFooter from '../pageFooter/pageFooter.vue';

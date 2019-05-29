@@ -7,6 +7,13 @@
                     <h3 class="h3">热门新碟</h3>
                 </div>
                 <div class="main_bot">
+                    <!-- <el-row>
+                        <el-col class="col01" v-for="item in newAblum" :key="item.id">
+                            <img :src="item.picUrl" alt="">
+                            <div class="dec">{{item.name}}</div>
+                            <div class="aut">{{item.artist.name}}</div>
+                        </el-col>
+                    </el-row> -->
                     <el-row>
                         <el-col class="col01">
                             <img src="https://p4.music.126.net/AmEaUMtl8R1Aql12-ydRsg==/109951163754790236.jpg?param=130y130" alt="">
@@ -33,8 +40,6 @@
                             <div class="dec">0</div>
                             <div class="aut">林忆莲</div>
                         </el-col>
-                    </el-row>
-                    <el-row>
                         <el-col class="col01">
                             <img src="https://p4.music.126.net/AmEaUMtl8R1Aql12-ydRsg==/109951163754790236.jpg?param=130y130" alt="">
                             <div class="dec">幕后之王 电视原声音...</div>
@@ -138,6 +143,36 @@
         </div>
     </div>
 </template>
+<script>
+import axios from 'axios';
+export default {
+    name: 'album',
+    data() {
+        return {
+            newAblum: []
+        }
+    },
+    mounted () {
+        this.getAlbum();
+    },
+    methods: {
+        getAlbum() {
+            let vm = this;
+            axios.get('http://musicapi.leanapp.cn/top/album', {
+                params: {
+                    offset: 0,
+                    limit: 10
+                }
+            }).then(function (res) {
+                vm.newAblum = res.data.albums;
+            }).catch(function (error) {
+                console.log(error);
+            });
+        },
+    }
+}
+</script>
+
 <style lang="less">
 @import "./album.less";
 </style>

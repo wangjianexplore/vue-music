@@ -20,7 +20,7 @@
                                 <span class="send">发私信</span>
                                 <span class="foucs">关 注</span>
                             </div>
-                            <div v-if="profile.userType!=0" class="look" @click="$router.push('/artist')">
+                            <div v-if="profile.userType!=0" class="look" @click="$router.push('/artist/'+profile.artistId)">
                                 <i class="i_look">查看歌手页</i>
                             </div>
                         </div>

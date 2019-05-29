@@ -341,7 +341,7 @@ export default {
     },
     watch: {
         errorTime: function (val) {
-            if (val > 4) {
+            if (val === 4) {
                 this.open();
             }
         }
