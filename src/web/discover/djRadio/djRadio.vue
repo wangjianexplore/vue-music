@@ -4,12 +4,28 @@
         <div class="dj-main">
             <div class="dj-wrap">
                 <div class="rditype">
-                    <el-row>
-                        <el-col class="el-col1" v-for="(item, index) in imgList" :key="index">
-                            <div class="img" :style="{background:'url('+item.img+')'}"></div>
-                            <div class="txt">{{item.name}}</div>
-                        </el-col>
-                    </el-row>
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <ul>
+                                    <li class="el-col1" v-for="(item, index) in djList.slice(0,18)" :key="index">
+                                        <div class="img" :style="{background:'url('+item.picWebUrl+')'}"></div>
+                                        <div class="txt">{{item.name}}</div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="swiper-slide">
+                                <ul>
+                                    <li class="el-col1" v-for="(item, index) in djList.slice(18)" :key="index">
+                                        <div class="img" :style="{background:'url('+item.picWebUrl+')'}"></div>
+                                        <div class="txt">{{item.name}}</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
                 </div>
                 <div class="rditop">
                     <div class="rdi_l">
@@ -49,6 +65,69 @@
                                 </li>
                             </ul>
                         </div>
+                    </div>
+                </div>
+                <div class="rdimore">
+                    <div class="u-title">
+                        <div class="left">优秀新电台</div>
+                    </div>
+                    <div class="rd_list">
+                        <ul class="ul">
+                            <li class="li">
+                                <img src="http://p2.music.126.net/aLF3FJa_AMt6_X0-BdvdZg==/109951163745447984.jpg?param=200y200" class="liimg" alt="">
+                                <div class="one">解忧邵帅的解忧小房间。</div>
+                                <div class="two textover">热门原创音乐人的创作故事</div>
+                            </li>
+                            <li class="li">
+                                <img src="http://p2.music.126.net/aLF3FJa_AMt6_X0-BdvdZg==/109951163745447984.jpg?param=200y200" class="liimg" alt="">
+                                <div class="one">解忧邵帅的解忧小房间。</div>
+                                <div class="two textover">热门原创音乐人的创作故事</div>
+                            </li>
+                            <li class="li">
+                                <img src="http://p2.music.126.net/aLF3FJa_AMt6_X0-BdvdZg==/109951163745447984.jpg?param=200y200" class="liimg" alt="">
+                                <div class="one">解忧邵帅的解忧小房间。</div>
+                                <div class="two textover">热门原创音乐人的创作故事</div>
+                            </li>
+                            <li class="li">
+                                <img src="http://p2.music.126.net/aLF3FJa_AMt6_X0-BdvdZg==/109951163745447984.jpg?param=200y200" class="liimg" alt="">
+                                <div class="one">解忧邵帅的解忧小房间。</div>
+                                <div class="two textover">热门原创音乐人的创作故事</div>
+                            </li>
+                            <li class="li">
+                                <img src="http://p2.music.126.net/aLF3FJa_AMt6_X0-BdvdZg==/109951163745447984.jpg?param=200y200" class="liimg" alt="">
+                                <div class="one">解忧邵帅的解忧小房间。</div>
+                                <div class="two textover">热门原创音乐人的创作故事</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="rdimore">
+                    <div class="u-title">
+                        <div class="left">电台排行榜</div>
+                    </div>
+                    <div class="rd_list">
+                        <el-row>
+                            <el-col class="el-col2" :span="12">
+                                <div class="list_col2">
+                                    <img class="img2" src="https://p1.music.126.net/moRaw3RO6GqhHZ5Oe_qD4Q==/109951163197334196.jpg?param=200y200" alt="">
+                                    <div class="info">
+                                        <div class="info_1">嘻哈公园thePark</div>
+                                        <div class="per"><em class="em"></em>解忧大白</div>
+                                        <div class="info_2">最有态度的嘻哈电台</div>
+                                    </div>
+                                </div>
+                            </el-col>
+                            <el-col class="el-col2" :span="12">
+                                <div class="list_col2">
+                                    <img class="img2" src="https://p1.music.126.net/moRaw3RO6GqhHZ5Oe_qD4Q==/109951163197334196.jpg?param=200y200" alt="">
+                                    <div class="info">
+                                        <div class="info_1">嘻哈公园thePark</div>
+                                        <div class="per"><em class="em"></em>解忧大白</div>
+                                        <div class="info_2">最有态度的嘻哈电台</div>
+                                    </div>
+                                </div>
+                            </el-col>
+                        </el-row>
                     </div>
                 </div>
                 <div class="rdimore">
@@ -194,84 +273,12 @@
     </div>
 </template>
 <script>
+import axios from 'axios';
+import Swiper from 'swiper';
 export default {
     name: 'djRadio',
     data() {
         return {
-            imgList: [
-                {
-                    name: '有声书',
-                    img: 'https://p1.music.126.net/jQo83vj8D0r3g0ydL1ujag==/18555358232264878.jpg'
-                },
-                {
-                    name: '知识技能',
-                    img: 'https://p1.music.126.net/OQ-1zApxCjSxieFf63irwA==/19212866183939953.jpg'
-                },
-                {
-                    name: '商业财经',
-                    img: 'https://p1.music.126.net/27_UywB9VT7qTicVaUL2Ww==/19052337486286044.jpg'
-                },
-                {
-                    name: '人文历史',
-                    img: 'https://p1.music.126.net/fxNHDWCNVvRFa_3KAsBw6w==/3242459791054879.jpg'
-                },
-                {
-                    name: '外语世界',
-                    img: 'https://p1.music.126.net/tNg9R3kjzSAvYRU439sV-A==/18996262393228947.jpg'
-                },
-                {
-                    name: '亲子宝贝',
-                    img: 'https://p1.music.126.net/WtEmxKotqvrOx02c7RwbdQ==/19167786207164648.jpg'
-                },
-                {
-                    name: '创作|翻唱',
-                    img: 'https://p1.music.126.net/cCogGBNagepu5uAd-OuCKQ==/19119407695444318.jpg'
-                },
-                {
-                    name: '音乐故事',
-                    img: 'https://p1.music.126.net/fNsFzMtgDByvOnpA0Kfehg==/3242459791054876.jpg'
-                },
-                {
-                    name: '3D|电子',
-                    img: 'https://p1.music.126.net/BVIacbDdjw90QjU4z7mZIw==/3389794351757648.jpg'
-                },
-                {
-                    name: '相声曲艺',
-                    img: 'https://p1.music.126.net/DZV3wnLcYoc32YLnxoVCOg==/3240260767799323.jpg'
-                },
-                {
-                    name: '情感调频',
-                    img: 'https://p1.music.126.net/RuluBZUC94KRYjx0eF7aHQ==/3223768093383533.jpg'
-                },
-                {
-                    name: '美文读物',
-                    img: 'https://p1.music.126.net/svlzt2aNhbHcAVRG1ae9nw==/19199672044369951.jpg'
-                },
-                {
-                    name: '脱口秀',
-                    img: 'https://p1.music.126.net/QdPlGPCPc-QDdaIKuVq3RQ==/3236962232922745.jpg'
-                },
-                {
-                    name: '广播剧',
-                    img: 'https://p1.music.126.net/MkrVCkXoJ7v29QXLBluUkw==/19167786207164651.jpg'
-                },
-                {
-                    name: '二次元',
-                    img: 'https://p1.music.126.net/2jEyq6KuPUv0GgFOeDB0rA==/7731765766567381.jpg'
-                },
-                {
-                    name: '明星做主播',
-                    img: 'https://p1.music.126.net/Jnx0K_M3Nc0Uk5YBXPifqw==/3249056860670081.jpg'
-                },
-                {
-                    name: '娱乐|影视',
-                    img: 'https://p2.music.126.net/8yoy33lYuvviDbcg1AOLUw==/3242459791054877.jpg'
-                },
-                {
-                    name: '科技科学',
-                    img: 'https://p2.music.126.net/RLir9qUUGNolaxtMz-mPNA==/18896206835140215.jpg'
-                }
-            ],
             songList: [
                 {
                     img: 'https://p1.music.126.net/D4yVBSzaWcLo8BMWGRN_iw==/19016053603020354.jpg?param=40x40',
@@ -334,7 +341,52 @@ export default {
                     type: '音乐故事',
                     percentage: 20
                 }
-            ]
+            ],
+            djList: [],
+            recomList: []
+        }
+    },
+    mounted() {
+        this.getDj();
+        this.getRecnm();
+        this.swiperS();
+    },
+    methods: {
+        getDj() {
+            let vm = this;
+            axios.get('http://musicapi.leanapp.cn/dj/catelist').then(function (res) {
+                vm.djList = res.data.categories;
+            }).catch(function (error) {
+                console.log(error);
+            });
+        },
+        getRecnm() {
+            let vm = this;
+            axios.get('http://musicapi.leanapp.cn/program/recommend').then(function (res) {
+                vm.recomList = res.data;
+            }).catch(function (error) {
+                console.log(error);
+            });
+        },
+        getRecnmType() {
+            let vm = this;
+            axios.get('http://musicapi.leanapp.cn/program/recommend').then(function (res) {
+                vm.recomList = res.data;
+            }).catch(function (error) {
+                console.log(error);
+            });
+        },
+        swiperS() {
+            let vm = this;
+            var swiper = new Swiper('.swiper-container', {
+                // loop: true,
+                simulateTouch: false,//禁止鼠标模拟
+                speed: 1000,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                }
+            });
         }
     }
 }
@@ -344,6 +396,7 @@ export default {
 @import "./djRadio.less";
 </style>
 <style lang="less">
+@import "swiper/dist/css/swiper.min.css";
 .el-progress-bar__outer {
     background-color: #dedede;
 }

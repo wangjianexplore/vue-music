@@ -27,23 +27,27 @@
   .main_bot {
     margin-top: 20px;
     margin-left: -33px;
+    overflow: hidden;
     img {
       width: 130px;
       height: 130px;
+      cursor: pointer;
+      position: absolute;
+      top: 0;
     }
     .col01 {
       width: 20%;
+      height: 200px;
       padding-left: 33px;
       padding-bottom: 30px;
       position: relative;
+      float: left;
     }
-    .col01:before {
+    .bg {
       background: url(../../../assets/coverall.png) no-repeat;
       background-position: 0 -845px;
       width: 153px;
       height: 130px;
-      content: "";
-      position: absolute;
     }
     .dec {
       margin: 8px 0 3px;
@@ -52,9 +56,11 @@
       text-overflow: ellipsis;
       white-space: nowrap;
       word-wrap: normal;
+      cursor: pointer;
     }
     .aut {
       color: #666;
+      cursor: pointer;
     }
   }
 }

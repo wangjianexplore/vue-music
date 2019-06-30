@@ -6,18 +6,41 @@
   border: 1px solid #d3d3d3;
   border-bottom: none;
   .dj-wrap {
-    padding: 40px;
+    // padding: 40px;
     .rditype {
+      position: relative;
       width: 900px;
       height: 194px;
-      margin-left: -20px;
+      margin: 0 auto;
+      margin-top: 40px;
+      box-sizing: content-box;
       margin-bottom: 20px;
     }
+    .swiper-button-next {
+      background: url(../../../assets/radio_slide.png) no-repeat;
+      background-position: -30px -30px;
+      width: 20px;
+      height: 30px;
+      right: -24px;
+      opacity: 0.25;
+      outline: none;
+    }
+    .swiper-button-prev {
+      background: url(../../../assets/radio_slide.png) no-repeat;
+      background-position: 0px -30px;
+      width: 20px;
+      height: 30px;
+      opacity: 0.25;
+      left: -24px;
+      outline: none;
+    }
     .el-col1 {
+      float: left;
       width: 11.11%;
       height: 98px;
-      padding-left: 33px;
+      padding: 0 16px;
       padding-bottom: 25px;
+      cursor: pointer;
     }
     .img {
       width: 48px;
@@ -30,6 +53,7 @@
       color: #888;
     }
     .rditop {
+      padding: 0 40px;
       overflow: hidden;
       .rdi_l {
         width: 426px;
@@ -106,7 +130,36 @@
     }
   }
   .rdimore {
+    padding: 0 40px;
     margin-top: 35px;
+    &:last-child {
+      padding-bottom: 20px;
+    }
+    .rd_list {
+      overflow: hidden;
+    }
+    .ul {
+      margin: 16px 0 0 -37px;
+    }
+    .li {
+      float: left;
+      width: 150px;
+      margin-left: 37px;
+      .liimg {
+        width: 150px;
+        height: 150px;
+        display: block;
+      }
+      .one {
+        margin: 13px 0 6px;
+        line-height: 16px;
+        font-size: 14px;
+      }
+      .two {
+        line-height: 18px;
+        color: #999;
+      }
+    }
     .u-title {
       height: 40px;
       border-bottom: 2px solid #c20c0c;
@@ -141,6 +194,22 @@
     }
     .info {
       margin-left: 140px;
+    }
+    .per {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 6px;
+    }
+    .em {
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: url(../../../assets/icon.png) no-repeat;
+      background-position: -50px -300px;
+      color: #333;
+      width: 14px;
+      height: 15px;
+      display: block;
     }
     .info_1 {
       margin: 16px 0 20px;

@@ -116,7 +116,7 @@
                         <div class="r-wrap list-board">
                             <div class="r-header">
                                 <span class="hot">榜单</span>
-                                <span class="more">更多</span>
+                                <span class="more" @click="$router.push('/discover/topList/0')">更多</span>
                             </div>
                             <div class="r-bottom r-bottom3">
                                 <el-row>
@@ -242,11 +242,11 @@
                                         <p class="singer-tl">音乐人</p>
                                     </div>
                                 </li>
-                                <li class="for-singer">申请成为网易音乐人</li>
+                                <!-- <li class="for-singer">申请成为网易音乐人</li> -->
                             </ul>
                         </div>
                     </div>
-                    <div class="left-anchor">
+                    <!-- <div class="left-anchor">
                         <div class="hot-anchor">热门主播</div>
                         <div class="anchor-li">
                             <ul>
@@ -297,8 +297,7 @@
                                 </li>
                             </ul>
                         </div>
-
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

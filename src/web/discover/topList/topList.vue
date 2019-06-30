@@ -100,6 +100,7 @@ export default {
         let vm = this;
         vm.songList(vm.$route.params.id);
         vm.getToplist();
+        window.scrollTo(0, 0);
     },
     methods: {
         ...mapMutations([
@@ -155,10 +156,8 @@ export default {
         getToplist() {
             let vm = this;
             axios.get('http://musicapi.leanapp.cn/toplist').then(function (res) {
-                console.log(res.data);
                 let data = res.data.list;
                 data.map(item => {
-                    console.log(item);
                     switch(item.name) {
                         case '云音乐飙升榜':
                             item.idx = 3;
